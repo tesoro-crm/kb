@@ -4,11 +4,18 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://support.tesoro.estate',
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Tesoro Docs',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				discord: 'https://github.com/withastro/starlight',
+			},
+			logo: {
+				light: './src/assets/tesoro-logo-light.svg',
+				dark: './src/assets/tesoro-logo-dark.svg',
+				alt: 'Tesoro CRM Logo',
+				replacesTitle: true,
 			},
 			sidebar: [
 				{
