@@ -1,0 +1,74 @@
+---
+title: Eerste Stappen
+description: Leer de basis van Tesoro CRM - van navigatie tot je eerste deal
+---
+
+# Eerste Stappen
+
+Nu je account is ingesteld, gaan we aan de slag met de kernfuncties van Tesoro CRM. Deze guide helpt je op weg met de belangrijkste dagelijkse taken.
+
+## Navigatie Leren Kennen
+
+De hoofdnavigatie van Tesoro CRM is intuïtief opgezet:
+
+1. **Hoofdmenu**
+   - Dashboard: Je persoonlijke overzicht
+   - Relaties: Bedrijven en organisaties
+   - Contacten: Individuele contactpersonen
+   - Leads: Potentiële klanten
+   - Deals: Verkoopkansen
+   - Activiteiten: Taken en afspraken
+
+2. **Snelle Acties**
+   - Plus-knop: Snel nieuwe items aanmaken
+   - Zoekbalk: Doorzoek alle content
+   - Notificaties: Bekijk updates
+   - Profiel: Persoonlijke instellingen
+
+## Eerste Relaties Toevoegen
+
+Begin met het opbouwen van je netwerk:
+
+1. **Nieuwe Relatie Aanmaken**
+   - Klik op 'Relaties'
+   - Kies 'Nieuwe Relatie'
+   - Vul de basisgegevens in:
+     - Bedrijfsnaam
+     - Adres
+     - Contactgegevens
+     - Type relatie
+
+2. **Contactpersonen Toevoegen**
+   - Open de relatie
+   - Ga naar 'Contactpersonen'
+   - Klik op 'Contact toevoegen'
+   - Vul de persoonlijke gegevens in
+
+## Je Eerste Deal Aanmaken
+
+Start met het beheren van verkoopkansen:
+
+1. **Deal Creëren**
+   - Ga naar 'Deals'
+   - Klik op 'Nieuwe Deal'
+   - Koppel aan een relatie
+   - Stel in:
+     - Deal waarde
+     - Verwachte sluitingsdatum
+     - Deal fase
+     - Eigenaar
+
+2. **Deal Opvolgen**
+   - Plan activiteiten
+   - Voeg notities toe
+   - Upload documenten
+   - Update de deal status
+
+## Volgende Stappen
+
+Nu je de basis onder de knie hebt, kun je:
+- Meer leren over [Vastgoedbeheer](/nl/vastgoedbeheer)
+- Je verdiepen in [Interface en Navigatie](/nl/interface-en-navigatie)
+- De [Dagelijks Gebruik](/nl/dagelijks-gebruik) sectie verkennen
+
+Vergeet niet dat je altijd hulp kunt vragen via de support-knop rechtsonder in je scherm!

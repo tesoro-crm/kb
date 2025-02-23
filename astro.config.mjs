@@ -8,10 +8,10 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Tesoro Docs',
-			defaultLocale: 'root',
+			defaultLocale: 'nl',
 			locales: {
 				// English docs in `src/content/docs/en/`
-				root: {
+				en: {
 				  label: 'English',
 				  lang: 'en',
 				},
@@ -37,16 +37,18 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Subscribe',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Subscribe', slug: 'subscribe/example' },
-					],
+					label: 'Introduction',
+					autogenerate: { directory: 'introduction' },
 				},
 				{
 					label: 'Onboarding',
 					autogenerate: { directory: 'onboarding' },
 				},
+				{
+					label: 'Subscribe',
+					autogenerate: { directory: 'subscribe' },
+				},
+				
 			],
 		}),
 	],
