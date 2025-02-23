@@ -8,6 +8,10 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Tesoro Docs',
+			customCss: [
+				// Relative path to your custom CSS file
+				'./src/styles/custom.css',
+			  ],
 			defaultLocale: 'nl',
 			locales: {
 				// English docs in `src/content/docs/en/`

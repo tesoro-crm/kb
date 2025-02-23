@@ -1,0 +1,3 @@
+button:where(.astro-v37mnknz)[data-open-modal] {
+    max-width: none;
+}
