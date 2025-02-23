@@ -8,6 +8,24 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Tesoro Docs',
+			defaultLocale: 'root',
+			locales: {
+				// English docs in `src/content/docs/en/`
+				root: {
+				  label: 'English',
+				  lang: 'en',
+				},
+				// Spanish docs in `src/content/docs/es/`
+				es: {
+				  label: 'Español',
+				  lang: 'es',
+				},
+				// Dutch docs in `src/content/docs/nl/`
+				nl: {
+				  label: 'Nederlands',
+				  lang: 'nl',
+				},
+			},
 			social: {
 				discord: 'https://github.com/withastro/starlight',
 			},
