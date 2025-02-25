@@ -21,7 +21,7 @@ export default defineConfig({
 				},
 				// Spanish docs in `src/content/docs/es/`
 				es: {
-				  label: 'Español',
+				  label: 'Español',
 				  lang: 'es',
 				},
 				// Dutch docs in `src/content/docs/nl/`
@@ -41,18 +41,34 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Introduction',
-					autogenerate: { directory: 'introduction' },
-				},
-				{
 					label: 'Onboarding',
 					autogenerate: { directory: 'onboarding' },
 				},
 				{
-					label: 'Subscribe',
+					label: 'Instellingen',
+					items: [
+						{
+							label: 'Algemeen',
+							autogenerate: { directory: 'settings/general' },
+						},
+						{
+							label: 'Abonnementen',
+							autogenerate: { directory: 'settings/subscriptions' },
+						},
+						{
+							label: 'Templates',
+							autogenerate: { directory: 'settings/templates' },
+						},
+						{
+							label: 'Website',
+							autogenerate: { directory: 'settings/website' },
+						},
+					],
+				},
+				{
+					label: 'Abonneren',
 					autogenerate: { directory: 'subscribe' },
 				},
-				
 			],
 		}),
 	],

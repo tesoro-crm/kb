@@ -3,7 +3,6 @@ title: Collega's Toevoegen
 description: Leer hoe je teamleden uitnodigt en hun toegang configureert in Tesoro CRM
 ---
 
-# Collega's Toevoegen
 
 Als beheerder kun je je teamleden toegang geven tot Tesoro CRM. Hier lees je hoe je dit effectief en veilig doet.
 
