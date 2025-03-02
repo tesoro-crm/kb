@@ -22,7 +22,7 @@ Het aanmaken van een nieuw account in Tesoro CRM is eenvoudig en snel. Volg deze
 Na registratie ontvang je een e-mail met een verificatiecode:
 1. Check je inbox (en eventueel spam folder)
 2. Open de verificatie-email
-3. Klik op de verificatielink of voer de code in
+3. Voer de code in (kopiëren en plakken kan ook)
 
 ## 3. Profiel Instellen
 

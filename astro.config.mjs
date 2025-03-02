@@ -5,6 +5,22 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://support.tesoro.estate',
+	image: {
+		service: {
+			entrypoint: 'astro/assets/services/sharp',
+			config: {
+				// Opties voor afbeeldingsoptimalisatie
+				formats: ['webp', 'avif', 'png', 'jpeg'],
+				quality: 80
+			}
+		},
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'placehold.co'
+			}
+		]
+	},
 	integrations: [
 		starlight({
 			title: 'Tesoro Docs',

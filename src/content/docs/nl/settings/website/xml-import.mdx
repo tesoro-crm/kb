@@ -3,6 +3,13 @@ title: XML-Import Configuratie
 description: Leer hoe je XML-feeds configureert voor het importeren van properties van andere makelaars
 ---
 
+import { Image } from 'astro:assets';
+import settingsMenuNav from '@assets/docs/nl/settings/website/xml-import/settings-menu-nav.png';
+import addFeedButton from '@assets/docs/nl/settings/website/xml-import/add-feed-button.png';
+import screenshot2238 from '@assets/docs/nl/settings/website/xml-import/Screenshot 25-02-2025 at 22.38.png';
+import screenshot2248 from '@assets/docs/nl/settings/website/xml-import/Screenshot 25-02-2025 at 22.48.png';
+import screenshot2251 from '@assets/docs/nl/settings/website/xml-import/Screenshot 25-02-2025 at 22.51.png';
+
 ## Navigatie naar XML-Import
 
 1. Klik op het tandwiel-icoon rechtsboven (links van je profielafbeelding)
@@ -10,14 +17,14 @@ description: Leer hoe je XML-feeds configureert voor het importeren van properti
 3. Ga naar de sectie **XML-Import**
 
 <figure class="screenshot-figure">
-  ![Navigatie naar XML-Import settings](/docs/nl/settings/website/xml-import/settings-menu-nav.png)
+  <Image src={settingsMenuNav} alt="Navigatie naar XML-Import settings" width={800} height={450} format="webp" quality={80} />
   <figcaption>Afbeelding 1: Het settings menu bereik je via het tandwiel-icoon rechtsboven</figcaption>
 </figure>
 
 In de XML-Import sectie kun je een nieuwe feed toevoegen via de knop met het plus-icoon.
 
 <figure class="screenshot-figure">
-  ![Nieuwe feed toevoegen](/docs/nl/settings/website/xml-import/add-feed-button.png)
+  <Image src={addFeedButton} alt="Nieuwe feed toevoegen" width={800} height={450} format="webp" quality={80} />
   <figcaption>Afbeelding 2: De plus-knop om een nieuwe feed toe te voegen</figcaption>
 </figure>
 
@@ -64,12 +71,12 @@ De URL van de XML-feed. Vraag deze aan bij je collega-makelaar en zorg dat het f
 Koppel de feed aan een makelaar. Klik op het gebouwtjes-icoon om een modal te openen waar je een bestaande relatie kunt selecteren of een nieuwe kunt aanmaken.
 
 <figure class="screenshot-figure">
-  ![Relation selector](/docs/nl/settings/website/xml-import/relation-selector.png)
+  <Image src={screenshot2238} alt="Relation selector" width={800} height={450} format="webp" quality={80} />
   <figcaption>Afbeelding 3: De relation selector met gebouwtjes-icoon</figcaption>
 </figure>
 
 <figure class="screenshot-figure">
-  ![Relation modal](/docs/nl/settings/website/xml-import/relation-modal.png)
+  <Image src={screenshot2248} alt="Relation modal" width={800} height={450} format="webp" quality={80} />
   <figcaption>Afbeelding 4: Modal voor het selecteren of aanmaken van een relatie</figcaption>
 </figure>
 
@@ -86,7 +93,7 @@ Er zijn twee hoofdstatussen voor een feed:
 - **Active**: Activeer de feed als alle instellingen correct zijn
 
 <figure class="screenshot-figure">
-  ![Status switches](/docs/nl/settings/website/xml-import/status-switches.png)
+  <Image src={screenshot2251} alt="Status switches" width={800} height={450} format="webp" quality={80} />
   <figcaption>Afbeelding 5: De Draft en Active status switches</figcaption>
 </figure>
 
@@ -114,7 +121,7 @@ Activeer deze optie alleen als je volledig vertrouwt op de kwaliteit van de feed
 Bepaal wat er gebeurt met properties die uit de feed verwijderd worden.
 
 <figure class="screenshot-figure">
-  ![Property status dropdown](/docs/nl/settings/website/xml-import/property-status-dropdown.png)
+  <Image src={screenshot2238} alt="Property status dropdown" width={800} height={450} format="webp" quality={80} />
   <figcaption>Afbeelding 6: Dropdown voor het instellen van de property status</figcaption>
 </figure>
 
@@ -134,7 +141,7 @@ Controleer regelmatig de properties met status "Removed by Feed" en overleg met 
 Stel een minimum- en maximumprijs in om properties buiten een bepaalde prijsrange automatisch uit te sluiten van import.
 
 <figure class="screenshot-figure">
-  ![Prijsfilter velden](/docs/nl/settings/website/xml-import/price-filters.png)
+  <Image src={screenshot2248} alt="Prijsfilter velden" width={800} height={450} format="webp" quality={80} />
   <figcaption>Afbeelding 7: Minimum en maximum prijsfilter velden</figcaption>
 </figure>
 
