@@ -11,11 +11,14 @@ Tesoro Docs is een meertalige documentatiewebsite die gebruikers helpt bij het g
 ## 🛠️ Installatie
 
 ### Vereisten
+
 - Node.js (versie 16 of hoger)
 - npm (komt mee met Node.js)
 
 ### Stappen
+
 1. Clone de repository:
+
    ```bash
    git clone https://github.com/yourusername/tesoro-docs.git
    cd tesoro-docs
@@ -28,12 +31,12 @@ Tesoro Docs is een meertalige documentatiewebsite die gebruikers helpt bij het g
 
 ## 🚀 Gebruik
 
-| Commando                  | Actie                                            |
-| :------------------------ | :----------------------------------------------- |
-| `npm run dev`             | Start lokale ontwikkelserver op `localhost:4321` |
-| `npm run build`           | Bouwt de productieversie naar `./dist/`          |
-| `npm run preview`         | Bekijk de gebouwde site lokaal                   |
-| `npm run astro ...`       | Voer CLI-commando's uit zoals `astro add`        |
+| Commando            | Actie                                            |
+| :------------------ | :----------------------------------------------- |
+| `npm run dev`       | Start lokale ontwikkelserver op `localhost:4321` |
+| `npm run build`     | Bouwt de productieversie naar `./dist/`          |
+| `npm run preview`   | Bekijk de gebouwde site lokaal                   |
+| `npm run astro ...` | Voer CLI-commando's uit zoals `astro add`        |
 
 ## 📁 Projectstructuur
 
@@ -62,47 +65,59 @@ Dit project gebruikt Astro's ingebouwde afbeeldingsoptimalisatie om afbeeldingen
 ### Hoe afbeeldingen toe te voegen:
 
 1. **Plaats afbeeldingen in de juiste map**:
+
    - Plaats afbeeldingen in `src/assets/docs/[taal]/[sectie]/` in plaats van in de `public/` map.
    - Bijvoorbeeld: `src/assets/docs/nl/settings/website/xml-import/`
 
 2. **Afbeeldingen gebruiken in .mdx bestanden** (aanbevolen methode):
+
    ```mdx
    ---
    title: Paginatitel
    description: Paginabeschrijving
    ---
 
-   import { Image } from 'astro:assets';
-   import afbeelding from '@assets/docs/nl/settings/website/afbeelding.png';
-   
+   import { Image } from "astro:assets";
+   import afbeelding from "@assets/docs/nl/settings/website/afbeelding.png";
+
    <figure class="screenshot-figure">
-     <Image src={afbeelding} alt="Beschrijving van de afbeelding" width={800} height={450} format="webp" quality={80} />
+     <Image
+       src={afbeelding}
+       alt="Beschrijving van de afbeelding"
+       width={800}
+       height={450}
+       format="webp"
+       quality={80}
+     />
      <figcaption>Bijschrift voor de afbeelding</figcaption>
    </figure>
    ```
 
 3. **Afbeeldingen gebruiken in .md bestanden**:
-   
+
    Voor standaard Markdown-bestanden (.md) kun je de volgende methoden gebruiken:
-   
+
    a. **Relatieve paden naar afbeeldingen in de public map**:
+
    ```md
    ![Beschrijving van de afbeelding](/docs/nl/settings/website/afbeelding.png)
    ```
-   
+
    b. **Met HTML in Markdown** (voor meer controle):
+
    ```md
    <figure class="screenshot-figure">
      <img src="/docs/nl/settings/website/afbeelding.png" alt="Beschrijving van de afbeelding" />
      <figcaption>Bijschrift voor de afbeelding</figcaption>
    </figure>
    ```
-   
+
    **Let op**: Bij deze methode worden afbeeldingen niet automatisch geoptimaliseerd. Voor optimalisatie, gebruik .mdx bestanden met het Image-component.
 
 4. **Voorbeeld van een volledige implementatie**:
-   
+
    Bestandsstructuur:
+
    ```
    src/
    ├── assets/
@@ -119,22 +134,32 @@ Dit project gebruikt Astro's ingebouwde afbeeldingsoptimalisatie om afbeeldingen
                    └── website/
                        └── xml-import.mdx
    ```
-   
+
    In `src/content/docs/nl/settings/website/xml-import.mdx`:
+
    ```mdx
    ---
    title: XML-Import Configuratie
    description: Leer hoe je XML-feeds configureert
    ---
-   
-   import { Image } from 'astro:assets';
-   import settingsMenuNav from '../../../../../assets/docs/nl/settings/website/xml-import/settings-menu-nav.png';
-   
+
+   import { Image } from "astro:assets";
+   import settingsMenuNav from "@assets/docs/nl/settings/website/xml-import/settings-menu-nav.png";
+
    ## Navigatie naar XML-Import
-   
+
    <figure class="screenshot-figure">
-     <Image src={settingsMenuNav} alt="Navigatie naar XML-Import settings" width={800} height={450} format="webp" quality={80} />
-     <figcaption>Het settings menu bereik je via het tandwiel-icoon rechtsboven</figcaption>
+     <Image
+       src={settingsMenuNav}
+       alt="Navigatie naar XML-Import settings"
+       width={800}
+       height={450}
+       format="webp"
+       quality={80}
+     />
+     <figcaption>
+       Het settings menu bereik je via het tandwiel-icoon rechtsboven
+     </figcaption>
    </figure>
    ```
 
@@ -147,17 +172,19 @@ Dit project gebruikt Astro's ingebouwde afbeeldingsoptimalisatie om afbeeldingen
 ### Nieuwe pagina toevoegen:
 
 1. Maak een nieuw `.md` of `.mdx` bestand in de juiste taalmap:
+
    ```
    src/content/docs/[taal]/[sectie]/pagina-naam.md
    ```
 
 2. Voeg de frontmatter toe aan het begin van het bestand:
+
    ```md
    ---
    title: Titel van de pagina
    description: Korte beschrijving van de pagina
    ---
-   
+
    # Inhoud van de pagina
    ```
 
