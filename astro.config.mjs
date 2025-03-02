@@ -57,6 +57,10 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'Abonneren',
+					autogenerate: { directory: 'subscribe' },
+				},
+				{
 					label: 'Onboarding',
 					autogenerate: { directory: 'onboarding' },
 				},
@@ -80,10 +84,6 @@ export default defineConfig({
 							autogenerate: { directory: 'settings/website' },
 						},
 					],
-				},
-				{
-					label: 'Abonneren',
-					autogenerate: { directory: 'subscribe' },
 				},
 			],
 		}),
