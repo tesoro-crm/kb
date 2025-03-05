@@ -171,3 +171,23 @@ Deze aanpak zorgt ervoor dat je geen kansen mist en flexibel blijft als de feed 
 - Houd wijzigingen in feed-configuraties bij
 - Documenteer specifieke afspraken met makelaars
 - Noteer eventuele aanpassingen in prijsfilters
+
+## Uitgebreide XML Import Filter Functionaliteit
+Sinds versie 1.1.0
+
+
+Voorheen moest bij het importeren van een XML-feed de volledige set properties worden ingelezen, waarna handmatig bepaalde properties als ‘niet interessant’ werden gemarkeerd via de properties interface. Vaak was dit gebaseerd op specifieke kenmerken, zoals:
+
+- **Locatie**: Properties buiten het werkgebied van de makelaar.
+- **Type**: Bijvoorbeeld plotsen, die niet passen binnen de wensen van de makelaar.
+- **Prijs**: Properties die buiten de gewenste prijsklassen vallen.
+
+### Nieuwe filtering-optie in Company Settings
+
+Met de nieuwe filtering-optie in de **Company Settings** onder **Website > XML Import** is dit proces aanzienlijk vereenvoudigd:
+
+- **Automatische uitsluiting**: Zodra de XML-feed voor de eerste keer wordt ingelezen, worden er extra velden toegevoegd (zoals property type, locatie, provincie, minimale en maximale prijs). Je kunt deze velden gebruiken om criteria in te stellen voor uitsluiting.
+- **Werking op uitsluiting**: Het systeem werkt nu met een uitsluitingslogica. Dit houdt in dat alle properties die niet expliciet uitgesloten zijn, standaard getoond worden. Zo komt bijvoorbeeld een nieuwe property in beeld als deze niet valt binnen de ingestelde uitsluitingscriteria. Dit voorkomt dat je per abuis belangrijke nieuwe properties mist.
+- **Voordeel**: Deze aanpak bespaart veel handmatig werk. In plaats van elke keer alle properties na te lopen en te beoordelen of ze interessant zijn, worden grote groepen ongewenste items automatisch gefilterd. Hierdoor kun je je focus leggen op de nieuwe items die niet onder de criteria vallen en die dus extra aandacht behoeven.
+
+Met deze verbetering heb je meer controle over welke properties wel en niet worden getoond, zodat je gerichter en efficiënter kunt beslissen wat relevant is voor jouw makelaarsactiviteiten.

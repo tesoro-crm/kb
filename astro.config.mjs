@@ -25,22 +25,18 @@ export default defineConfig({
 		starlight({
 			title: 'Tesoro Docs',
 			customCss: [
-				// Relative path to your custom CSS file
 				'./src/styles/custom.css',
-			  ],
+			],
 			defaultLocale: 'nl',
 			locales: {
-				// English docs in `src/content/docs/en/`
 				en: {
 				  label: 'English',
 				  lang: 'en',
 				},
-				// Spanish docs in `src/content/docs/es/`
 				es: {
 				  label: 'Español',
 				  lang: 'es',
 				},
-				// Dutch docs in `src/content/docs/nl/`
 				nl: {
 				  label: 'Nederlands',
 				  lang: 'nl',
@@ -80,10 +76,22 @@ export default defineConfig({
 							autogenerate: { directory: 'settings/templates' },
 						},
 						{
+							label: 'AI Property Context',
+							link: '/docs/nl/settings/ai-property-context',
+						},
+						{
 							label: 'Website',
 							autogenerate: { directory: 'settings/website' },
 						},
+				{
+					label: 'Interfaces',
+					autogenerate: { directory: 'interfaces' },
+				},
 					],
+				},
+				{
+					label: 'Release Notes',
+					autogenerate: { directory: 'release-notes' },
 				},
 			],
 		}),
