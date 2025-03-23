@@ -6,10 +6,9 @@ sidebar:
 ---
 
 
-**Een goede voorbereiding is de sleutel tot een succesvolle start met Tesoro CRM. Wij helpen je met deze gids om je organisatie klaar te maken voor de implementatie. Volg de onderstaande stappen om alles op orde te krijgen.**
+Een goede voorbereiding is de sleutel tot een succesvolle start met Tesoro CRM. Wij helpen je met deze gids om je organisatie klaar te maken voor de implementatie. Volg de onderstaande stappen om alles op orde te krijgen.
 
 ---
-
 
 ## Inventarisatie
 
@@ -47,12 +46,11 @@ In Tesoro worden contacten beheerd binnen één database en kunnen zij als Lead 
 Bij het importeren van contacten is het van belang om gebruik te maken van de Tesoro importtemplate (CSV-formaat). Deze template helpt bij het correct structureren van de data. Data-import kan complex zijn; overleg daarom altijd met de Tesoro Client Success Manager om een goed migratieplan op te stellen.
 
 ### 3. Werkprocessen
-
 - Breng je huidige werkprocessen in kaart:
-- Lead management (hoe leads worden opgevolgd).
-- Deal flow (stappen van lead tot sluiting).
-- Rapportages (welke data je nodig hebt).
-- Documentbeheer (waar documenten worden opgeslagen).
+  - Lead management (hoe leads worden opgevolgd).
+  - Deal flow (stappen van lead tot sluiting).
+  - Rapportages (welke data je nodig hebt).
+  - Documentbeheer (waar documenten worden opgeslagen).
 
 ### 4. Kennis en Training
 
@@ -77,6 +75,7 @@ Voor een soepele start is het aan te raden om:
   - Agenda (voor afspraken en planning).
   - Documentsysteem (bijv. Google Drive, Dropbox).
   - Vastgoedportals (voor XML-feeds).
+  - Financiële software (bijv. boekhouding).
 
 ### 3. E-mailintegratie
 
@@ -107,7 +106,7 @@ Voor vastgoedkantoren die publiceren op externe portals, is het belangrijk om vo
 ### 5. Datatemplates
 - Download onze datatemplates om je data voor te bereiden.  
   ![Voorbeeld van een datatemplate](https://placehold.co/600x400/cccccc/000000/png?text=Datatemplate+Voorbeeld)  
-  screenshot
+  {/* Vervang dit door een screenshot van het ingevulde leads/contact-importsjabloon (zie voorbeeld hieronder). */}
 - Gebruik het onderstaande voorbeeld om je leads en contacten te structureren:
   ```csv
   "first_name","last_name","email","phone","owner_email","address.street","address.city","address.state","address.zip_code","address.country","lead.status","lead.source","lead.stage","property_details.type","property_details.location","property_details.number_of_bedrooms","property_details.size_min","property_details.size_max","property_details.price_min","property_details.price_max","timing.looking_to","timing.timeline_min","timing.timeline_max","salutation","language","additional_information"
