@@ -1,0 +1,141 @@
+---
+title: De Voorbereiding
+description: Bereid je organisatie voor op het gebruik van Tesoro CRM.
+sidebar:
+  order: 1
+---
+
+
+**Een goede voorbereiding is de sleutel tot een succesvolle start met Tesoro CRM. Wij helpen je met deze gids om je organisatie klaar te maken voor de implementatie. Volg de onderstaande stappen om alles op orde te krijgen.**
+
+---
+import { Steps } from '@astrojs/starlight/components';
+
+<Steps>
+
+1. Import the component into your MDX file:
+
+   ```js
+   import { Steps } from '@astrojs/starlight/components';
+   ```
+
+2. Wrap `<Steps>` around your ordered list items.
+
+</Steps>
+
+## Inventarisatie
+<Steps>
+1. Team en Rollen
+
+:::warning
+Zorg ervoor dat er altijd minstens één Admin is om het systeem te beheren.
+:::
+
+Tesoro CRM kent twee rollen:
+
+**Admin**: Heeft de hoogste rechten en kan bedrijfsinstellingen configureren, gebruikers aanmaken en uitnodigen.
+
+**Medewerker**: Heeft dezelfde rechten als een admin buiten de instellingen om, maar kan geen bedrijfsinstellingen aanpassen of gebruikers beheren.
+
+2. Datamigratie
+
+:::tip
+Maak altijd een backup van je bestaande data voordat je begint met de migratie.
+:::
+
+:::warning
+Controleer de geïmporteerde data zorgvuldig op volledigheid en nauwkeurigheid.
+:::
+
+Bij een migratie naar Tesoro CRM zijn er enkele belangrijke interfaces:
+
+**Contacten**
+
+In Tesoro worden contacten beheerd binnen één database en kunnen zij als Lead of Contact worden geclassificeerd:
+
+- **Leads**: Komt binnen in de lead-interface en wordt als lead behandeld.
+- **Contacten**: Zodra een lead wordt geconverteerd naar een deal en een contact, verandert de classificatie naar Contact.
+
+Bij het importeren van contacten is het van belang om gebruik te maken van de Tesoro importtemplate (CSV-formaat). Deze template helpt bij het correct structureren van de data. Data-import kan complex zijn; overleg daarom altijd met de Tesoro Client Success Manager om een goed migratieplan op te stellen.
+
+3. Werkprocessen
+  - Breng je huidige werkprocessen in kaart:
+  - Lead management (hoe leads worden opgevolgd).
+  - Deal flow (stappen van lead tot sluiting).
+  - Rapportages (welke data je nodig hebt).
+  - Documentbeheer (waar documenten worden opgeslagen).
+
+4. Kennis en Training
+
+Voor een soepele start is het aan te raden om:
+
+- De Tesoro documentatie door te nemen.
+- Een groepswebinar te organiseren met de Client Success Manager voor een introductie en een snelle jumpstart.
+<Steps>
+---
+
+## Technische voorbereiding
+
+### 1. Systeemcheck
+- Controleer of je systemen klaar zijn:
+  - **Browsercompatibiliteit**: Tesoro CRM werkt het beste met recente versies van Chrome, Firefox of Edge.
+  - **Internetverbinding**: Zorg voor een stabiele en snelle verbinding.
+  - **E-mailinstellingen**: Verifieer dat je e-mailaccount correct is ingesteld voor verificatie en meldingen.
+
+### 2. Integraties
+- Identificeer welke koppelingen je nodig hebt:
+  - E-mailsysteem (bijv. Gmail, Outlook).
+  - Agenda (voor afspraken en planning).
+  - Documentsysteem (bijv. Google Drive, Dropbox).
+  - Vastgoedportals (voor XML-feeds).
+  - Financiële software (bijv. boekhouding).
+
+### 3. E-mailintegratie
+
+:::warning
+Zorg ervoor dat je e-mailprovider voldoet aan de vereisten van Tesoro CRM voordat je de integratie start.
+:::
+
+Indien uw huidige CRM een ingesloten mailserver gebruikt, moet er een migratie plaatsvinden naar een onafhankelijke e-mailomgeving. Tesoro ondersteunt integratie met:
+
+- Google Mail (Gmail for Business)
+- Microsoft Office 365 (Outlook)
+
+Het is aanbevolen om een partner te vinden die de migratie kan uitvoeren naar een van deze e-mailproviders. Na de migratie kan de e-mail eenvoudig in Tesoro worden gekoppeld.
+
+Zodra de e-mail is verbonden met Tesoro, worden e-mails automatisch zichtbaar binnen het CRM als het verzend- of ontvangstadres overeenkomt met een contact in de database.
+
+### 4. Vastgoedportals en XML-feeds
+
+:::tip
+Test de XML-feeds altijd eerst in een testomgeving voordat je ze live zet.
+:::
+
+Voor vastgoedkantoren die publiceren op externe portals, is het belangrijk om vooraf te weten:
+
+- Welke XML-feed types worden gebruikt (bijvoorbeeld Kyero, Inmolaria, Sooprema, etc.).
+- Of er specifieke configuraties nodig zijn voor een correcte data-uitwisseling.
+
+### 5. Datatemplates
+- Download onze datatemplates om je data voor te bereiden.  
+  ![Voorbeeld van een datatemplate](https://placehold.co/600x400/cccccc/000000/png?text=Datatemplate+Voorbeeld)  
+  screenshot
+- Gebruik het onderstaande voorbeeld om je leads en contacten te structureren:
+  ```csv
+  "first_name","last_name","email","phone","owner_email","address.street","address.city","address.state","address.zip_code","address.country","lead.status","lead.source","lead.stage","property_details.type","property_details.location","property_details.number_of_bedrooms","property_details.size_min","property_details.size_max","property_details.price_min","property_details.price_max","timing.looking_to","timing.timeline_min","timing.timeline_max","salutation","language","additional_information"
+  "Preston","Sappson","psappson0@wired.com","+46 354 453 0889","m.stroz@codelines.io","Fulton","Göteborg","Västra Götaland","415 17","SE","lost","idealista","hot","townhouse","id",1,3,2,6,6,"sell","2023-03-24 23:51:45","2023-02-03 05:49:34","mr","en-US","donec odio justo sollicitudin ut suscipit"
+  "Marian","Dockwray","mdockwray1@gov.uk","+62 213 468 1483","m.stroz@codelines.io","Dexter","Nilanapo",,,"ID","lost","social_media","hot","apartment","pulvinar",0,5,4,7,1,"sell","2023-07-01 17:06:02","2023-05-11 09:35:03","dr","co","velit donec diam neque vestibulum eget vulputate"
+
+### 6. Importtemplates
+
+:::warning
+Volg de template structuur exact om importfouten te voorkomen.
+:::
+
+Voor een efficiënte gegevensimport, download en gebruik de juiste Tesoro Importtemplates:
+
+[Link naar contactimport template]
+
+[Link naar vastgoedimport template]
+
+[Link naar andere relevante importtemplates]

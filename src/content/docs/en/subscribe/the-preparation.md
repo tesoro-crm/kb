@@ -2,7 +2,7 @@
 title: De Voorbereiding
 description: Bereid je organisatie voor op het gebruik van Tesoro CRM.
 sidebar:
-  order: 0
+  order: 1
 ---
 
 
