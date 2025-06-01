@@ -1,0 +1,313 @@
+---
+title: De Voorbereiding op Tesoro CRM
+description: Complete gids voor een soepele overstap naar Tesoro CRM
+sidebar:
+  order: 1
+---
+
+**Welkom bij Tesoro CRM!** Een goede voorbereiding is de sleutel tot een succesvolle start. Deze handleiding neemt je stap voor stap mee door het voorbereidingsproces, zodat je optimaal kunt profiteren van alle functionaliteiten.
+
+{/* PLACEHOLDER_IMAGE: /assets/images/nl/subscribe/voorbereiding-header.png
+   Beschrijving: Overzicht van het Tesoro CRM dashboard met belangrijkste functies gemarkeerd
+   Afmetingen: 1200x600 */}
+
+## Stap 1: Bepaal je doelen en verwachtingen
+
+Voordat je begint met de overstap is het belangrijk om helder te hebben wat je wilt bereiken met Tesoro CRM:
+
+- Welke uitdagingen wil je oplossen?
+- Welke processen wil je stroomlijnen?
+- Welke rapportages zijn essentieel voor je bedrijfsvoering?
+- Wat verwacht je van de gebruikerservaring?
+
+## Stap 2: Breng je team en processen in kaart
+
+### Team en Rollen
+
+:::caution
+Zorg ervoor dat er altijd minstens één Admin is om het systeem te beheren.
+:::
+
+Tesoro CRM kent twee rollen:
+
+**Admin**: Heeft de hoogste rechten en kan bedrijfsinstellingen configureren, gebruikers aanmaken en uitnodigen.
+
+**Medewerker**: Heeft dezelfde rechten als een admin buiten de instellingen om, maar kan geen bedrijfsinstellingen aanpassen of gebruikers beheren.
+
+### Huidige werkwijze
+
+**Huidige systemen:**
+- Welke CRM-software gebruik je nu?
+- Gebruik je aparte systemen voor e-mail, agenda of documentbeheer?
+- Werk je met specifieke vastgoedsoftware of -portals?
+
+**Werkprocessen:**
+- Breng je huidige werkprocessen in kaart:
+  - Lead management (hoe worden leads opgevolgd?)
+  - Deal flow (stappen van lead tot sluiting)
+  - Rapportages (welke data heb je nodig?)
+  - Documentbeheer (waar worden documenten opgeslagen?)
+
+### Vastgoedportalen
+
+Maak een overzicht van alle portalen waar je actief bent, zoals:
+- Idealista (via API)
+- Fotocasa (toekomstige integratie)
+- Andere relevante platforms
+
+Voor elk portaal hebben we nodig:
+- Naam van het portaal
+- ILC-code (alleen voor Idealista)
+- Contactpersoon bij het portaal (naam, e-mail, telefoon)
+- Huidige API-sleutels of inloggegevens
+- Specifieke wensen of vereisten voor de integratie
+
+*Let op:* Bij sommige portalen (zoals Idealista) moeten we de overstap naar Tesoro CRM officieel doorgeven. Houd hier rekening mee in je planning.
+
+## Stap 3: Bereid je data voor
+
+{/* PLACEHOLDER_IMAGE: /assets/images/nl/subscribe/crm-migratie.png
+   Beschrijving: Stappenplan voor datamigratie met icoontjes
+   Afmetingen: 800x400 */}
+
+### Te migreren data
+
+:::tip
+Maak altijd een backup van je bestaande data voordat je begint met de migratie.
+:::
+
+- Contactgegevens van klanten en relaties
+- Actieve en afgeronde transacties
+- Documenten en bijlagen
+- Afspraken en taken
+- Notities en communicatiegeschiedenis
+
+### Huidig CRM-informatie
+
+Om de migratie soepel te laten verlopen, hebben we nodig:
+- Naam en versie van je huidige CRM-systeem
+- Beschikbare exportmogelijkheden (CSV, Excel, API)
+- Hoe je data momenteel is geordend
+- Belangrijke relaties tussen verschillende soorten gegevens
+
+### Datastructuur in Tesoro CRM
+
+In Tesoro worden contacten beheerd binnen één database en kunnen zij als Lead of Contact worden geclassificeerd:
+
+- **Leads**: Komt binnen in de lead-interface en wordt als lead behandeld.
+- **Contacten**: Zodra een lead wordt geconverteerd naar een deal en een contact, verandert de classificatie naar Contact.
+
+### Importinstructies
+
+:::caution
+**Belangrijke mededeling over data-import**
+
+Het importeren van gegevens is vaak complexer dan het lijkt. Door verschillen in gegevensstructuren tussen systemen kunnen er problemen ontstaan zoals:
+
+- Onjuiste koppeling van velden
+- Verlies van gegevens
+- Dubbele of onvolledige records
+- Problemen met speciale tekens of opmaak
+
+Wij raden je daarom ten zeerste aan om contact op te nemen met je Tesoro CRM Success Manager voordat je begint met importeren. Zij kunnen je begeleiden bij het proces en ervoor zorgen dat je gegevens correct worden overgezet.
+:::
+
+Je kunt op verschillende manieren gegevens importeren in Tesoro CRM, afhankelijk van het type gegevens:
+
+1. **Leads importeren**
+   - Ga naar: [Leads importeren](https://crm.tesoro.estate/leads/import)
+   - Of klik in het Leads-overzicht rechtsboven op de knop en kies "Importeren"
+
+2. **Relaties importeren**
+   - Ga naar: [Relaties importeren](https://crm.tesoro.estate/relations/import)
+   - Of klik in het Relaties-overzicht rechtsboven op de knop en kies "Importeren"
+
+3. **Contactpersonen importeren**
+   - Ga naar: [Contacten importeren](https://crm.tesoro.estate/contacts/import)
+   - Of klik in het Contacten-overzicht rechtsboven op de knop en kies "Importeren"
+
+4. **Deals importeren** (binnenkort beschikbaar)
+   - Wordt binnenkort toegevoegd
+
+### Beschikbare templates
+
+Voor een efficiënte gegevensimport hebben we handige templates voor je klaarliggen. Je kunt deze eenvoudig downloaden en invullen met je eigen gegevens:
+
+- [📥 Template voor Leads importeren](#)
+- [📥 Template voor Relaties importeren](#)
+- [📥 Template voor Contactpersonen importeren](#)
+
+:::tip
+Volg de template structuur exact om importfouten te voorkomen. Zorg ervoor dat je altijd de meest recente versie van de templates downloadt via bovenstaande links.
+:::
+
+### Stap 1: Importscherm openen
+<div style={{maxWidth: '100%', overflow: 'auto', marginBottom: '20px'}}>
+  <img 
+    src="/assets/images/nl/subscribe/import/data-import-step1.png" 
+    alt="Overzicht van het importscherm in Tesoro CRM"
+    style={{maxWidth: '100%', height: 'auto', border: '1px solid #eee', borderRadius: '4px'}}
+  />
+</div>
+
+In dit scherm zie je de importmodule van Tesoro CRM. Hier kun je:
+- Klikken op "Bestand selecteren" om je CSV-bestand te uploaden
+- Het juiste importtype selecteren (bijv. Contactpersonen of Vastgoedobjecten)
+- Een toewijzingsprofiel kiezen als je er eerder een hebt gemaakt
+- De import starten met de knop "Volgende"
+
+### Stap 2: Velden koppelen
+<div style={{maxWidth: '100%', overflow: 'auto', marginTop: '20px', marginBottom: '20px'}}>
+  <img 
+    src="/assets/images/nl/subscribe/import/data-import-step2.png" 
+    alt="Voorbeeld van een ingevulde importtemplate"
+    style={{maxWidth: '100%', height: 'auto', border: '1px solid #eee', borderRadius: '4px'}}
+  />
+</div>
+
+In dit scherm koppel je de kolommen uit je CSV-bestand aan de juiste velden in Tesoro CRM:
+- **Linkerkolom**: Toont de velden in je CSV-bestand
+- **Rechterkolom**: Toont de bijbehorende velden in Tesoro CRM
+- **Koppelen**: Sleep velden van links naar rechts of gebruik de pijltjes om ze te koppelen
+- **Geavanceerde opties**: Klik op het tandwielicoon voor extra instellingen
+- **Voltooien**: Klik op "Volgende" om de import te starten
+
+*Tip: Sla je veldkoppelingen op als profiel om ze later opnieuw te gebruiken!*
+
+Hieronder vind je een voorbeeld van hoe je gegevens gestructureerd kunnen worden:
+
+```csv
+"first_name","last_name","email","phone","owner_email","address.street","address.city","address.state","address.zip_code","address.country","lead.status","lead.source","lead.stage","property_details.type","property_details.location","property_details.number_of_bedrooms","property_details.size_min","property_details.size_max","property_details.price_min","property_details.price_max","timing.looking_to","timing.timeline_min","timing.timeline_max","salutation","language","additional_information"
+"Preston","Sappson","psappson0@wired.com","+46 354 453 0889","m.stroz@codelines.io","Fulton","Göteborg","Västra Götaland","415 17","SE","lost","idealista","hot","townhouse","id",1,3,2,6,6,"sell","2023-03-24 23:51:45","2023-02-03 05:49:34","mr","en-US","donec odio justo sollicitudin ut suscipit"
+"Marian","Dockwray","mdockwray1@gov.uk","+62 213 468 1483","m.stroz@codelines.io","Dexter","Nilanapo",,,"ID","lost","social_media","hot","apartment","pulvinar",0,5,4,7,1,"sell","2023-07-01 17:06:02","2023-05-11 09:35:03","dr","co","velit donec diam neque vestibulum eget vulputate"
+```
+
+:::warning
+Controleer de geïmporteerde data zorgvuldig op volledigheid en nauwkeurigheid.
+:::
+
+## Stap 4: Betrek en train je team
+
+{/* PLACEHOLDER_IMAGE: /assets/images/nl/subscribe/team-voorbereiding.png
+   Beschrijving: Teamoverleg over CRM-implementatie
+   Afmetingen: 1000x600 */}
+
+### Gebruikers in kaart brengen
+- Wie gaat er allemaal met het systeem werken?
+- Welke rollen en rechten zijn er nodig?
+- Wie wordt verantwoordelijk voor het beheer?
+
+### Training en kennisoverdracht
+
+Voor een soepele start raden we aan om:
+- De Tesoro documentatie door te nemen
+- Een groepswebinar te organiseren met de Client Success Manager
+- Een introductiesessie voor het hele team te plannen
+- Voldoende oefentijd in te plannen vóór de officiële ingebruikname
+- Een interne contactpersoon aan te wijzen voor vragen
+
+### Communicatieplan
+- Informeer het team tijdig over de komende veranderingen
+- Creëer draagvlak door de voordelen te benadrukken
+- Organiseer regelmatige updates over het implementatieproces
+
+## Stap 5: Regel e-mailintegratie en -migratie
+
+{/* PLACEHOLDER_IMAGE: /assets/images/nl/subscribe/email-integratie.png
+   Beschrijving: Overzicht van e-mailintegratie en migratieproces
+   Afmetingen: 1000x600 */}
+
+### E-mailintegratie
+Tesoro CRM werkt naadloos samen met:
+- Microsoft 365 (aanbevolen)
+- Google Workspace
+
+### E-mailmigratie (indien nodig)
+Als je overstapt van een ander e-mailsysteem, raden we aan om professionele hulp in te schakelen. Een betrouwbare partner hiervoor is:
+
+**Apps Implantadores**  
+Website: [appsimplantadores.com](https://www.appsimplantadores.com)  
+Gespecialiseerd in e-mailmigraties voor vastgoedkantoren in Spanje
+
+### Belangrijke aandachtspunten:
+- Elke gebruiker heeft een uniek e-mailadres nodig
+- Controleer of je huidige e-mailprovider wordt ondersteund
+- Houd rekening met eventuele migratiekosten bij het wisselen van provider
+- Plan voldoende tijd in voor de migratie, vooral bij grote hoeveelheden e-mailgegevens
+
+## Stap 6: Betaalgegevens regelen
+
+Voor de betaling van je Tesoro CRM-abonnement heb je nodig:
+
+- Een bedrijfscreditcard (Visa of Mastercard)
+- Factuurgegevens van je bedrijf
+
+De betalingen worden veilig afgehandeld via [Stripe](https://stripe.com), een toonaangevende betalingsdienstverlener. (opent in nieuw tabblad)
+
+## Stap 7: Plan de onboarding
+
+{/* PLACEHOLDER_IMAGE: /assets/images/nl/subscribe/onboarding-stappen.png
+   Beschrijving: Infographic met de 4 stappen van het onboardingproces
+   Afmetingen: 1200x800 */}
+
+Tijdens het onboardingproces doorlopen we de volgende stappen:
+
+1. **Inrichtingsgesprek** (30 min)
+   - Bespreken van je wensen en eisen
+   - Inrichten van je account
+
+2. **Datamigratie**
+   - Exporteren van je bestaande gegevens
+   - Controleren en opschonen van de data
+   - Importeren in Tesoro CRM
+
+3. **Training**
+   - Basisworkshop voor alle gebruikers
+   - Specifieke training op maat indien nodig
+
+4. **Livegang**
+   - Officiële ingebruikname
+   - Eerste weken extra ondersteuning
+
+## Stap 8: Extra ondersteuning (optioneel)
+
+Naast de standaard onboarding bieden we extra ondersteuning op maat voor je team. Denk aan:
+- Geavanceerde trainingen voor specifieke functies
+- Aanpassingen aan workflows
+- Extra begeleiding bij complexe migraties
+- Hulp bij het optimaliseren van werkprocessen
+- Maatwerktrainingen voor specifieke teams
+
+:::warning
+**Belangrijk over datamigratie**
+
+Het overzetten van bestaande gegevens is vaak complexer dan het lijkt. Veelvoorkomende uitdagingen zijn:
+
+- Verschillende gegevensstructuren tussen systemen
+- Onvolledige of inconsistente gegevens
+- Problemen met speciale tekens of opmaak
+- Verlies van belangrijke relaties tussen gegevens
+
+Wij raden je daarom aan om:
+
+1. Altijd een backup te maken voor je begint
+2. Kleine testimporten uit te voeren
+3. De resultaten zorgvuldig te controleren
+4. Bij twijfel contact op te nemen met je Tesoro CRM Success Manager
+
+Onze ervaring leert dat professionele begeleiding bij het migreren van gegevens veel problemen en teleurstellingen kan voorkomen.
+:::
+
+Neem contact op met je accountmanager om de mogelijkheden te bespreken en een op maat gemaakt ondersteuningsplan op te stellen.
+
+## Conclusie
+
+{/* PLACEHOLDER_IMAGE: /assets/images/nl/subscribe/succesvolle-implementatie.png
+   Beschrijving: Team dat een succesvolle implementatie viert
+   Afmetingen: 1000x600 */}
+
+Door deze stappen te volgen, zorg je voor een vlotte overstap naar Tesoro CRM. Ons team staat klaar om je hierbij te begeleiden en te ondersteunen waar nodig.
+
+Heb je nog vragen of wil je direct aan de slag? Neem dan contact op met je accountmanager of stuur een e-mail naar [support@tesorocrm.com](mailto:support@tesorocrm.com).
+
+We kijken ernaar uit om samen met jou en je team aan de slag te gaan met Tesoro CRM!
