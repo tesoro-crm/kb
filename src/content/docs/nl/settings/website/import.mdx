@@ -1,0 +1,193 @@
+---
+title: XML-Import Configuratie
+description: Leer hoe je XML-feeds configureert voor het importeren van properties van andere makelaars
+---
+
+import { Image } from 'astro:assets';
+import settingsMenuNav from '@assets/docs/nl/settings/website/xml-import/settings-menu-nav.png';
+import addFeedButton from '@assets/docs/nl/settings/website/xml-import/add-feed-button.png';
+import screenshot2238 from '@assets/docs/nl/settings/website/xml-import/Screenshot 25-02-2025 at 22.38.png';
+import screenshot2248 from '@assets/docs/nl/settings/website/xml-import/Screenshot 25-02-2025 at 22.48.png';
+import screenshot2251 from '@assets/docs/nl/settings/website/xml-import/Screenshot 25-02-2025 at 22.51.png';
+
+## Navigatie naar XML-Import
+
+1. Klik op het tandwiel-icoon rechtsboven (links van je profielafbeelding)
+2. Selecteer "Settings" uit het dropdown menu
+3. Ga naar de sectie **XML-Import**
+
+<figure class="screenshot-figure">
+  <Image src={settingsMenuNav} alt="Navigatie naar XML-Import settings" width={800} height={450} format="webp" quality={80} />
+  <figcaption>Afbeelding 1: Het settings menu bereik je via het tandwiel-icoon rechtsboven</figcaption>
+</figure>
+
+In de XML-Import sectie kun je een nieuwe feed toevoegen via de knop met het plus-icoon.
+
+<figure class="screenshot-figure">
+  <Image src={addFeedButton} alt="Nieuwe feed toevoegen" width={800} height={450} format="webp" quality={80} />
+  <figcaption>Afbeelding 2: De plus-knop om een nieuwe feed toe te voegen</figcaption>
+</figure>
+
+## Beschikbare Velden
+
+### Basis Informatie
+- [Feed Name](#feed-name) - Naam van de feed
+- [Provider](#provider) - Type XML-feed (Kero, Inmobilia)
+- [URL](#url) - De feed URL
+- [Relation](#relation) - Gekoppelde makelaar
+
+### Commissie & Status
+- [Default Commission](#default-commission) - Standaard commissie voor properties
+- [Draft en Active Status](#draft-en-active-status) - Test modus en activatie
+- [Publish to Website](#publish-to-website) - Publiceer properties naar de website
+
+### Property Instellingen
+- [Property Status](#property-status) - Status bij verwijdering uit feed
+- [Prijsfilters](#prijsfilters) - Filter op prijsrange
+
+## Veld Beschrijvingen
+
+### Feed Name
+**Type**: Input Field
+
+De naam van je feed moet duidelijk en beschrijvend zijn. Gebruik bijvoorbeeld de naam van de makelaar en voeg extra specificaties toe zoals regio of commissiepercentage.
+
+### Provider
+**Type**: Dropdown
+
+Selecteer het juiste XML-formaat voor je feed:
+- Kero-format
+- Inmobilia-format
+- Suprema-format (komt binnenkort)
+
+### URL
+**Type**: Input Field
+
+De URL van de XML-feed. Vraag deze aan bij je collega-makelaar en zorg dat het formaat overeenkomt met de gekozen provider.
+
+### Relation
+**Type**: Combobox met Modal
+
+Koppel de feed aan een makelaar. Klik op het gebouwtjes-icoon om een modal te openen waar je een bestaande relatie kunt selecteren of een nieuwe kunt aanmaken.
+
+<figure class="screenshot-figure">
+  <Image src={screenshot2238} alt="Relation selector" width={800} height={450} format="webp" quality={80} />
+  <figcaption>Afbeelding 3: De relation selector met gebouwtjes-icoon</figcaption>
+</figure>
+
+<figure class="screenshot-figure">
+  <Image src={screenshot2248} alt="Relation modal" width={800} height={450} format="webp" quality={80} />
+  <figcaption>Afbeelding 4: Modal voor het selecteren of aanmaken van een relatie</figcaption>
+</figure>
+
+### Default Commission
+**Type**: Input Field (numeriek)
+
+Stel een standaard commissiepercentage in voor alle properties in de feed. Dit veld accepteert alleen numerieke waardes. Het ingestelde percentage kan later per property worden aangepast indien nodig.
+
+### Draft en Active Status
+**Type**: LightSwitch
+
+Er zijn twee hoofdstatussen voor een feed:
+- **Draft**: Gebruik deze status om de feed eerst te testen
+- **Active**: Activeer de feed als alle instellingen correct zijn
+
+<figure class="screenshot-figure">
+  <Image src={screenshot2251} alt="Status switches" width={800} height={450} format="webp" quality={80} />
+  <figcaption>Afbeelding 5: De Draft en Active status switches</figcaption>
+</figure>
+
+:::note[Workflow]
+We adviseren sterk om een nieuwe feed altijd eerst een periode in Draft mode te testen. Dit geeft je de mogelijkheid om:
+- De kwaliteit van de data te controleren
+- De commissies te verifiëren
+- Eventuele problemen op te lossen
+
+Zet de feed pas op Active als je volledig vertrouwd bent met de werking en kwaliteit van de feed.
+:::
+
+### Publish to Website
+**Type**: LightSwitch
+
+Bepaal of properties uit deze feed automatisch op de website gepubliceerd worden. Deze optie is alleen beschikbaar als de feed actief is.
+
+:::caution[Publicatie Waarschuwing]
+Activeer deze optie alleen als je volledig vertrouwt op de kwaliteit van de feed en zeker weet dat alle properties correct worden weergegeven. Test eerst grondig in de Draft fase voordat je properties automatisch publiceert.
+:::
+
+### Property Status
+**Type**: Dropdown
+
+Bepaal wat er gebeurt met properties die uit de feed verwijderd worden.
+
+<figure class="screenshot-figure">
+  <Image src={screenshot2238} alt="Property status dropdown" width={800} height={450} format="webp" quality={80} />
+  <figcaption>Afbeelding 6: Dropdown voor het instellen van de property status</figcaption>
+</figure>
+
+:::caution[Belangrijk]
+We raden sterk aan om de status **"Removed by Feed"** te gebruiken. Dit heeft meerdere voordelen:
+- Voorkomt onbedoeld verlies van belangrijke property data
+- Behoudt de historie van leads en deals
+- Maakt het mogelijk om periodiek te controleren waarom properties zijn verwijderd
+- Properties kunnen later weer actief worden als ze tijdelijk uit de markt waren
+
+Controleer regelmatig de properties met status "Removed by Feed" en overleg met de makelaar over de reden van verwijdering.
+:::
+
+### Prijsfilters
+**Type**: Input Fields (numeriek, min/max)
+
+Stel een minimum- en maximumprijs in om properties buiten een bepaalde prijsrange automatisch uit te sluiten van import.
+
+<figure class="screenshot-figure">
+  <Image src={screenshot2248} alt="Prijsfilter velden" width={800} height={450} format="webp" quality={80} />
+  <figcaption>Afbeelding 7: Minimum en maximum prijsfilter velden</figcaption>
+</figure>
+
+:::tip[Slim filteren]
+We werken bewust met een **uitsluitingslogica** in plaats van inclusie. Dit heeft een belangrijk voordeel:
+
+Stel je krijgt eerst een feed met een beperkt aantal locaties. Je sluit alleen de ongewenste locaties uit. Als er later nieuwe locaties worden toegevoegd aan de feed:
+- **Bij inclusielogica**: Je mist nieuwe locaties omdat ze niet expliciet zijn geïncludeerd
+- **Bij uitsluitingslogica**: Je ziet alle nieuwe locaties en kunt dan beslissen of je ze wilt uitsluiten
+
+Deze aanpak zorgt ervoor dat je geen kansen mist en flexibel blijft als de feed uitbreidt.
+:::
+
+## Best Practices
+
+### Regelmatige Controle
+- Controleer periodiek properties met de status "Removed by Feed"
+- Verifieer bij de makelaar waarom properties zijn verwijderd
+- Monitor de feed-status regelmatig
+
+### Testing
+- Test nieuwe feeds altijd eerst in draft mode
+- Controleer of alle properties correct worden geimporteerd
+- Verifieer commissiepercentages
+
+### Documentatie
+- Houd wijzigingen in feed-configuraties bij
+- Documenteer specifieke afspraken met makelaars
+- Noteer eventuele aanpassingen in prijsfilters
+
+## Uitgebreide XML Import Filter Functionaliteit
+Sinds versie 1.1.0
+
+
+Voorheen moest bij het importeren van een XML-feed de volledige set properties worden ingelezen, waarna handmatig bepaalde properties als ‘niet interessant’ werden gemarkeerd via de properties interface. Vaak was dit gebaseerd op specifieke kenmerken, zoals:
+
+- **Locatie**: Properties buiten het werkgebied van de makelaar.
+- **Type**: Bijvoorbeeld plotsen, die niet passen binnen de wensen van de makelaar.
+- **Prijs**: Properties die buiten de gewenste prijsklassen vallen.
+
+### Nieuwe filtering-optie in Company Settings
+
+Met de nieuwe filtering-optie in de **Company Settings** onder **Website > XML Import** is dit proces aanzienlijk vereenvoudigd:
+
+- **Automatische uitsluiting**: Zodra de XML-feed voor de eerste keer wordt ingelezen, worden er extra velden toegevoegd (zoals property type, locatie, provincie, minimale en maximale prijs). Je kunt deze velden gebruiken om criteria in te stellen voor uitsluiting.
+- **Werking op uitsluiting**: Het systeem werkt nu met een uitsluitingslogica. Dit houdt in dat alle properties die niet expliciet uitgesloten zijn, standaard getoond worden. Zo komt bijvoorbeeld een nieuwe property in beeld als deze niet valt binnen de ingestelde uitsluitingscriteria. Dit voorkomt dat je per abuis belangrijke nieuwe properties mist.
+- **Voordeel**: Deze aanpak bespaart veel handmatig werk. In plaats van elke keer alle properties na te lopen en te beoordelen of ze interessant zijn, worden grote groepen ongewenste items automatisch gefilterd. Hierdoor kun je je focus leggen op de nieuwe items die niet onder de criteria vallen en die dus extra aandacht behoeven.
+
+Met deze verbetering heb je meer controle over welke properties wel en niet worden getoond, zodat je gerichter en efficiënter kunt beslissen wat relevant is voor jouw makelaarsactiviteiten.

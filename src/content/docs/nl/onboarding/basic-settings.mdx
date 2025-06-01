@@ -1,0 +1,55 @@
+---
+title: Basisinstellingen
+description: Configureer je Tesoro CRM omgeving naar jouw wensen
+---
+
+# Basisinstellingen
+
+Na het aanmaken van je account is het tijd om je Tesoro CRM omgeving in te richten. Deze instellingen helpen je om efficiënter te werken.
+
+## Dashboard Personaliseren
+
+Je dashboard is je startpunt in Tesoro CRM. Pas het aan naar jouw behoeften:
+
+1. **Widgets Toevoegen**
+   - Klik op "Dashboard bewerken"
+   - Kies uit beschikbare widgets:
+     - Recente activiteiten
+     - Leads overzicht
+     - Deal pipeline
+     - Agenda
+     - Taken
+
+2. **Layout Aanpassen**
+   - Sleep widgets naar de gewenste positie
+   - Pas de grootte aan met de hoekgrepen
+   - Stel de verversingsfrequentie in
+
+## Notificaties Instellen
+
+Blijf op de hoogte van belangrijke updates:
+
+1. **E-mail Notificaties**
+   - Nieuwe leads
+   - Deal updates
+   - Taak herinneringen
+   - Team activiteiten
+
+2. **Browser Notificaties**
+   - Schakel desktop meldingen in/uit
+   - Kies prioriteitsniveau
+   - Stel niet-storen tijden in
+
+## Team Uitnodigen (voor beheerders)
+
+Als je teamleider of beheerder bent, kun je teamleden uitnodigen:
+
+1. Ga naar "Instellingen > Team"
+2. Klik op "Lid toevoegen"
+3. Vul het e-mailadres in
+4. Selecteer de rol en rechten
+5. Verstuur de uitnodiging
+
+## Volgende Stap
+
+Nu je basisinstellingen zijn geconfigureerd, kun je doorgaan naar [Eerste Stappen](/nl/onboarding/eerste-stappen) om te leren hoe je door het systeem navigeert en je eerste relaties toevoegt.

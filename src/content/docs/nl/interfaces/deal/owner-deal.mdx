@@ -1,0 +1,40 @@
+---
+title: "Owner Deal"
+description: "Documentatie over de Owner Deal interface."
+---
+
+
+De **Owner Deal** interface beschrijft de structuur en werking van deals die betrekking hebben op de eigenaar (verkoper) van een vastgoedobject.
+
+## Eigenschappen
+- **Eigenaar**: De persoon of entiteit die het vastgoed bezit.
+- **Status**: De huidige status van de deal (bijv. in onderhandeling, afgerond).
+- **Prijs**: De overeengekomen prijs voor de deal.
+
+## Gebruik
+Deze interface wordt gebruikt om transacties en onderhandelingen met eigenaren te beheren binnen het systeem.
+
+### Owner’s Leads en Owner Deals Functionaliteit
+ (Sinds versie 1.0)
+
+Voorheen ondersteunde Tesoro CRM uitsluitend Buyer Leads en Buyer Deals, gericht op kopers die geïnteresseerd zijn in meerdere woningen. Met deze update introduceren we een aparte workflow voor verkopers: de Owner Leads en Owner Deals.
+
+### Owner Lead
+Wanneer een huiseigenaar contact opneemt met de makelaar – via de website, telefoon of persoonlijk – ontstaat er een **Owner Lead**. Deze lead representeert de intentie om samen met de makelaar het huis te verkopen. Tijdens deze fase doorloopt de lead een kwalificatieproces, waarbij de makelaar de juiste vragen stelt en op basis daarvan bepaalt of de lead geschikt is voor een verdere samenwerking.
+
+### Conversie naar Owner Deal
+Zodra de makelaar de **Owner Lead** kwalificeert, wordt deze omgezet in een **Owner Deal**. Hierbij krijgt de contactpersoon de rol van ‘Owner’, omdat hij de eigenaar is van de woning die verkocht moet worden. Dit is cruciaal, omdat de verdere afhandeling en de informatievoorziening rondom de deal specifiek zijn afgestemd op de behoeften van verkopers.
+
+### Verschillen met Buyer Deals
+
+#### Workflow
+Bij een **Buyer Deal** worden vaak meerdere huizen gepresenteerd en vergeleken, terwijl een **Owner Deal** zich concentreert op de verkoop van één specifieke woning.
+
+#### Interface
+De kanbanview voor **Owner Deals** is anders ingericht. In plaats van een overzicht van meerdere beschikbare properties, worden de verkoopdeals als een specifieke card aan de **Owner Deal** gekoppeld. Dit betekent dat zodra een woning in een **Buyer Deal** wordt opgenomen, er een synchronisatie plaatsvindt met de **Owner Deal**. Hierdoor worden relevante gegevens zoals meetings, bezoeken, afwijzingen en andere processtappen gedeeld, zodat de eigenaar continu op de hoogte blijft van het verkoopproces.
+
+#### Processtappen
+De **stepper** – oftewel de procesflow van de deal – is voor **Owner Deals** aangepast. Dit komt omdat de fases in het verkoopproces (zoals inventarisatie, taxatie, fotomomenten, en contractonderhandelingen) duidelijk verschillen van die bij een aankoopproces.
+
+### Meerwaarde voor makelaars en verkopers
+Deze nieuwe functionaliteit biedt makelaars een op maat gemaakte workflow om effectief met verkopers te werken. De makelaar krijgt niet alleen een duidelijk overzicht van waar de **Owner Deal** in het proces staat, maar kan ook direct acties ondernemen op basis van de real-time gedeelde informatie. Dit leidt tot een efficiëntere opvolging en betere communicatie richting de eigenaar.

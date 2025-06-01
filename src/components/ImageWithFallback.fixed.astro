@@ -1,0 +1,114 @@
+---
+// src/components/ImageWithFallback.astro
+// Component voor afbeeldingen met fallback-functionaliteit
+// Gebruik: 
+// <ImageWithFallback 
+//   src="/path/to/image.jpg" 
+//   alt="Beschrijving" 
+//   width={800} 
+//   height={600} 
+//   fallbackSrc="/fallback/image-not-found.svg" 
+//   loading="lazy"
+// />
+
+import { Image } from 'astro:assets';
+
+// Type definitie voor de props
+interface Props {
+  src: string | ImageMetadata;
+  alt: string;
+  width: number;
+  height: number;
+  fallbackSrc?: string;
+  loading?: 'lazy' | 'eager';
+  [key: string]: any;
+}
+
+// Haal de props op met TypeScript type
+const { 
+  src, 
+  alt, 
+  fallbackSrc = '/fallback/image-not-found.svg',
+  loading = 'lazy',
+  width,
+  height,
+  ...restProps 
+} = Astro.props as Props;
+
+// Controleer of het een SVG-bestand is
+const isSvg = (path: string | any): boolean => {
+  if (!path) return false;
+  const src = typeof path === 'string' ? path : path?.src || '';
+  return src.toLowerCase().endsWith('.svg');
+};
+
+// Valideer verplichte props
+if (!alt) {
+  console.warn('ImageWithFallback: Het `alt` attribuut is verplicht voor toegankelijkheid');
+}
+
+// Valideer afmetingen
+if (!width || !height) {
+  console.warn('ImageWithFallback: `width` en `height` attributen worden aanbevolen voor Cumulative Layout Shift (CLS) optimalisatie');
+}
+
+// Bouw de basis props op
+const baseProps = {
+  alt,
+  width,
+  height,
+  loading,
+  class: 'image-content',
+  ...restProps
+};
+
+// Error handler voor afbeeldingen
+const handleError = `
+  (function(e) {
+    if (e.target.src !== '${fallbackSrc}') {
+      e.target.src = '${fallbackSrc}';
+      e.target.onerror = null;
+    }
+  })(event)
+`;
+---
+
+<figure class="image-container">
+  {isSvg(src) ? (
+    // Toon SVG zonder optimalisatie
+    <img
+      src={typeof src === 'string' ? src : src.src}
+      {...baseProps}
+      onerror={handleError}
+    />
+  ) : (
+    // Gebruik Astro's Image voor geoptimaliseerde afbeeldingen
+    <Image
+      src={src}
+      {...baseProps}
+      format="webp"
+    />
+  )}
+  {alt && <figcaption class="image-caption">{alt}</figcaption>}
+</figure>
+
+<style>
+  .image-container {
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  
+  .image-content {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-caption {
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+    color: var(--sl-color-text);
+    opacity: 0.8;
+  }
+</style>
