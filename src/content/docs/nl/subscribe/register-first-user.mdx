@@ -6,28 +6,51 @@ sidebar:
 ---
 
 import { Image } from 'astro:assets';
-import register1personalinfo from '@assets/docs/nl/subscribe/registratie/register-1-personal-info.png';
-import register2role from '@assets/docs/nl/subscribe/registratie/register-2-role.png';
-import register3companyname from '@assets/docs/nl/subscribe/registratie/register-3-company-name.png';
-import register4verify from '@assets/docs/nl/subscribe/registratie/register-4-verify.png';
-import register4verifymail from '@assets/docs/nl/subscribe/registratie/register-4-verify-mail.png';
-import register4verifywithnumbers from '@assets/docs/nl/subscribe/registratie/register-4verify-with-numbers.png';
-import register5afterregistration from '@assets/docs/nl/subscribe/registratie/register-5-after-registration.png';
-import register5setpasswordwithpassword from '@assets/docs/nl/subscribe/registratie/register-5-set-password-with-password.png';
-import register5registersetpassword from '@assets/docs/nl/subscribe/registratie/register-5-set-password.png';
-import register6wearein from '@assets/docs/nl/subscribe/registratie/register-6-we-are-in.png';
+import register1personalinfo from '@images/nl/subscribe/register-1-personal-info.png';
+import register2role from '@images/nl/subscribe/register-2-role.png';
+import register3companyname from '@images/nl/subscribe/register-3-company-name.png';
+import register4verify from '@images/nl/subscribe/register-4-verify.png';
+import register4verifymail from '@images/nl/subscribe/register-4-verify-mail.png';
+import register4verifywithnumbers from '@images/nl/subscribe/register-4verify-with-numbers.png';
+import register5afterregistration from '@images/nl/subscribe/register-5-after-registration.png';
+import register5setpasswordwithpassword from '@images/nl/subscribe/register-5-set-password-with-password.png';
+import register5registersetpassword from '@images/nl/subscribe/register-5-set-password.png';
+import register6wearein from '@images/nl/subscribe/register-6-we-are-in.png';
 
-
+## Inleiding
 
 Welkom bij de registratieprocedure van Tesoro CRM! In deze handleiding leiden we je stap voor stap door het proces van het aanmaken van je account. Tesoro CRM is een krachtig platform voor vastgoedprofessionals, en een correcte registratie is de eerste stap naar een efficiënte werkwijze.
 
-:::caution[Belangrijk voor teams]
-De eerste persoon die zich registreert wordt automatisch de Admin en initialiseert het systeem voor het hele bedrijf. Collega's moeten **niet** zelf een nieuwe registratie starten, maar worden door de Admin uitgenodigd.
+## Wat je nodig hebt
+
+Zorg dat je het volgende bij de hand hebt voordat je begint:
+
+- Een geldig e-mailadres
+- Bedrijfsnaam (indien van toepassing)
+- Een veilig wachtwoord (minimaal 12 tekens)
+- Ongeveer 5 minuten de tijd
+
+## Persoonlijke gegevens
+
+Begin met het invullen van je persoonlijke gegevens:
+
+<Image src={register1personalinfo} alt="Scherm voor het invullen van persoonlijke gegevens" />
+
+- **Volledige naam**: Je volledige voor- en achternaam
+- **E-mailadres**: Een werkend e-mailadres waarop je e-mails kunt ontvangen
+- **Telefoonnummer**: Je mobiele of vaste nummer (optioneel maar aanbevolen)
+
+> **Tip**: Zorg ervoor dat je een e-mailadres gebruikt waar je toegang toe hebt, want je ontvangt hier een verificatie-e-mail.
+
+:::danger[Belangrijk voor teams]
+De eerste persoon die zich registreert wordt automatisch de Admin en initialiseert het systeem voor het hele bedrijf. 
+
+Collega's moeten **niet** zelf een nieuwe registratie starten, maar worden door de Admin uitgenodigd.
 :::
 
+## Registratiestappen
 
-
-## 1. Start van de registratie
+### 1. Start van de registratie
 
 Wanneer je de **[registratiepagina](https://crm.tesoro.estate/auth/signup)** van Tesoro CRM bezoekt, zie je een overzichtelijk scherm met twee delen:
 
@@ -41,11 +64,11 @@ Klik op de knop **"Register your account"** om te beginnen.
   <figcaption>Afbeelding 1: Registratiepagina met de 'Register your account' knop</figcaption>
 </figure>
 
-:::note[Let op]
+:::danger[Belangrijk]
 Als de registratie niet volledig wordt afgerond vóór de verificatiecode, moet het proces opnieuw worden gestart. Na het invoeren van de verificatiecode kan het proces wel worden hervat via "Wachtwoord vergeten".
 :::
 
-## 2. Persoonlijke gegevens
+### 2. Persoonlijke gegevens
 
 In deze stap vul je je persoonlijke informatie in:
 
@@ -60,7 +83,7 @@ Controleer je gegevens zorgvuldig en klik op "Next" om door te gaan.
   <figcaption>Afbeelding 2: Vul je persoonlijke gegevens in</figcaption>
 </figure>
 
-## 3. E-mailverificatie
+### 3. E-mailverificatie
 
 Na het invullen van je gegevens ontvang je een verificatie-e-mail:
 
@@ -69,15 +92,17 @@ Na het invullen van je gegevens ontvang je een verificatie-e-mail:
 3. Vind de 6-cijferige verificatiecode
 4. Vul deze code in de zes vakjes op het scherm in
 
-
-
 <figure class="screenshot-figure">
-  <Image src={register3companyname} alt='Voorbeeld van de verificatie-email' width={800} height={450} format='webp' quality={80} />
-  <figcaption>Afbeelding 3: De verificatie-email met je persoonlijke code</figcaption>
+  <Image src={register4verifymail} alt='Voorbeeld van de verificatie-email' width={800} height={450} format='webp' quality={80} />
+  <figcaption>Afbeelding 3a: De verificatie-email met je persoonlijke code</figcaption>
 </figure>
 
+<figure class="screenshot-figure">
+  <Image src={register4verifywithnumbers} alt='Scherm voor het invoeren van de verificatiecode' width={800} height={450} format='webp' quality={80} />
+  <figcaption>Afbeelding 3b: Voer de ontvangen code in</figcaption>
+</figure>
 
-## 5. Bedrijfsinformatie
+### 4. Bedrijfsinformatie
 
 Als eerste gebruiker moet je je bedrijfsgegevens invoeren:
 
@@ -88,11 +113,11 @@ Vul de bedrijfsnaam exact in zoals je deze wilt gebruiken. Deze naam wordt in he
 Vul de bedrijfsnaam in en klik op "Next" om door te gaan.
 
 <figure class="screenshot-figure">
-  <Image src={register5afterregistration} alt='Scherm voor het invoeren van bedrijfsinformatie' width={800} height={450} format='webp' quality={80} />
-  <figcaption>Afbeelding 7: Vul de bedrijfsinformatie in</figcaption>
+  <Image src={register3companyname} alt='Scherm voor het invoeren van bedrijfsinformatie' width={800} height={450} format='webp' quality={80} />
+  <figcaption>Afbeelding 4: Vul de bedrijfsinformatie in</figcaption>
 </figure>
 
-## 6. Rol selecteren
+### 5. Rol selecteren
 
 Als eerste gebruiker word je automatisch aangesteld als Admin. Dit geeft je volledige controle over het systeem en de mogelijkheid om:
 
@@ -103,39 +128,33 @@ Als eerste gebruiker word je automatisch aangesteld als Admin. Dit geeft je voll
 Selecteer je rol en klik op "Next".
 
 <figure class="screenshot-figure">
-  <Image src={register5setpasswordwithpassword} alt='Scherm voor het selecteren van je rol' width={800} height={450} format='webp' quality={80} />
-  <figcaption>Afbeelding 8: Selecteer je rol</figcaption>
+  <Image src={register2role} alt='Scherm voor het selecteren van je rol' width={800} height={450} format='webp' quality={80} />
+  <figcaption>Afbeelding 5: Selecteer je rol in het bedrijf</figcaption>
 </figure>
 
 :::danger[Belangrijk]
 Als je de registratie in dit stadium afbreekt, moet je het hele proces opnieuw beginnen. Zorg dat je de tijd hebt om de registratie af te ronden.
 :::
 
-## 4. Wachtwoord instellen
+### 6. Wachtwoord instellen
 
-Kies een sterk wachtwoord dat voldoet aan de volgende eisen:
+Kies een sterk wachtwoord voor je account. Zorg dat het voldoet aan de volgende eisen:
 
-- Minimaal 8 tekens
-- Ten minste één hoofdletter
-- Ten minste één kleine letter
-- Ten minste één speciaal teken
-- Ten minste één cijfer
+- Minimaal 12 tekens
+- Minimaal 1 hoofdletter
+- Minimaal 1 cijfer
+- Minimaal 1 speciaal teken (bijv. !@#$%^&*)
 
-Je kunt het wachtwoord zichtbaar maken met het oog-icoon om typefouten te voorkomen.
-
-<figure class="screenshot-figure">
-  <Image src={register4verify} alt='Eerste stap van het wachtwoord instellen' width={800} height={450} format='webp' quality={80} />
-  <figcaption>Afbeelding 5: Eerste stap van het wachtwoord instellen</figcaption>
-</figure>
+Herhaal het wachtwoord om typfouten te voorkomen.
 
 <figure class="screenshot-figure">
-  <Image src={register4verifymail} alt='Scherm voor het instellen van je wachtwoord' width={800} height={450} format='webp' quality={80} />
+  <Image src={register5setpasswordwithpassword} alt='Scherm voor het instellen van je wachtwoord' width={800} height={450} format='webp' quality={80} />
   <figcaption>Afbeelding 6: Stel een sterk wachtwoord in</figcaption>
 </figure>
 
 
 
-## 7. Bevestiging en dashboard
+### 7. Bevestiging en dashboard
 
 Na succesvolle registratie:
 
@@ -149,8 +168,8 @@ Na succesvolle registratie:
 </figure>
 
 <figure class="screenshot-figure">
-  <Image src={register4verifymail} alt='De bevestigingsmail na registratie' width={800} height={450} format='webp' quality={80} />
-  <figcaption>Afbeelding 10: Bevestigingsmail na registratie</figcaption>
+  <Image src={register5afterregistration} alt='Bevestigingsscherm na voltooide registratie' width={800} height={450} format='webp' quality={80} />
+  <figcaption>Afbeelding 10: Bevestiging van je registratie</figcaption>
 </figure>
 
 ## Veelvoorkomende problemen en oplossingen
