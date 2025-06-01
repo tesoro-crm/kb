@@ -1,0 +1,323 @@
+---
+title: Preparing for Tesoro CRM
+description: Complete guide for a smooth transition to Tesoro CRM
+sidebar:
+  order: 1
+lang: en
+---
+
+**Welcome to Tesoro CRM!** Good preparation is the key to a successful start. This guide will take you step by step through the preparation process, so you can make the most of all functionalities.
+
+{/* PLACEHOLDER_IMAGE: /assets/images/en/subscribe/preparation-header.png
+   Description: Overview of the Tesoro CRM dashboard with key features highlighted
+   Dimensions: 1200x600 */}
+
+## Step 1: Define Your Goals and Expectations
+
+Before you start the transition, it's important to have a clear understanding of what you want to achieve with Tesoro CRM:
+
+- What challenges do you want to solve?
+- Which processes do you want to streamline?
+- What reports are essential for your business operations?
+- What are your expectations for the user experience?
+
+## Step 2: Map Out Your Team and Processes
+
+### Team and Roles
+
+:::caution
+Ensure there is always at least one Admin to manage the system.
+:::
+
+Tesoro CRM has two roles:
+
+**Admin**: Has the highest permissions and can configure company settings, create and invite users.
+
+**Employee**: Has the same rights as an admin except for settings, but cannot modify company settings or manage users.
+
+### Current Workflow
+
+**Current Systems:**
+- What CRM software are you currently using?
+- Do you use separate systems for email, calendar, or document management?
+- Do you work with specific real estate software or portals?
+
+**Work Processes:**
+- Map out your current workflows:
+  - Lead management (how are leads followed up?)
+  - Deal flow (steps from lead to closing)
+  - Reporting (what data do you need?)
+  - Document management (where are documents stored?)
+
+### Real Estate Portals
+
+Create an overview of all portals you're active on, such as:
+- Idealista (via API)
+- Fotocasa (future integration)
+- Other relevant platforms
+
+For each portal, we need:
+- Portal name
+- ILC code (only for Idealista)
+- Portal contact person (name, email, phone)
+- Current API keys or login credentials
+- Specific wishes or requirements for the integration
+
+*Note:* For some portals (like Idealista), we need to officially notify them about the switch to Tesoro CRM. Keep this in mind for your planning.
+
+## Step 3: Prepare Your Data
+
+{/* PLACEHOLDER_IMAGE: /assets/images/en/subscribe/crm-migration.png
+   Description: Step-by-step migration plan with icons
+   Dimensions: 800x400 */}
+
+### Data to Migrate
+
+:::tip
+Always make a backup of your existing data before starting the migration.
+:::
+
+- Customer and contact information
+- Active and completed transactions
+- Documents and attachments
+- Appointments and tasks
+- Notes and communication history
+
+### Current CRM Information
+
+For a smooth migration, we need:
+- Name and version of your current CRM system
+- Available export options (CSV, Excel, API)
+- How your data is currently organized
+- Important relationships between different types of data
+
+### Data Structure in Tesoro CRM
+
+In Tesoro, contacts are managed in a single database and can be classified as either Lead or Contact:
+
+- **Leads**: Enter through the lead interface and are treated as leads.
+- **Contacts**: Once a lead is converted to a deal and a contact, the classification changes to Contact.
+
+### Import Instructions
+
+:::caution
+**Important Notice About Data Import**
+
+Importing data is often more complex than it seems. Due to differences in data structures between systems, issues may arise such as:
+
+- Incorrect field mapping
+- Data loss
+- Duplicate or incomplete records
+- Problems with special characters or formatting
+
+We strongly recommend contacting your Tesoro CRM Success Manager before starting the import. They can guide you through the process and ensure your data is transferred correctly.
+:::
+
+You can import data into Tesoro CRM in several ways, depending on the type of data:
+
+1. **Importing Leads**
+   - Go to: [Import Leads](https://crm.tesoro.estate/leads/import)
+   - Or click the button in the top right of the Leads overview and choose "Import"
+
+2. **Importing Relations**
+   - Go to: [Import Relations](https://crm.tesoro.estate/relations/import)
+   - Or click the button in the top right of the Relations overview and choose "Import"
+
+3. **Importing Contacts**
+   - Go to: [Import Contacts](https://crm.tesoro.estate/contacts/import)
+   - Or click the button in the top right of the Contacts overview and choose "Import"
+
+4. **Importing Deals** (coming soon)
+   - Will be added soon
+
+### Available Templates
+
+For efficient data import, we have prepared handy templates for you. You can easily download these and fill them with your own data:
+
+- [📥 Import Leads Template](#)
+- [📥 Import Relations Template](#)
+- [📥 Import Contacts Template](#)
+
+:::tip
+Follow the template structure exactly to prevent import errors. Make sure you always download the most recent version of the templates using the links above.
+:::
+
+### Step 1: Open the Import Screen
+<div style={{maxWidth: '100%', overflow: 'auto', marginBottom: '20px'}}>
+  <img 
+    src="/assets/images/en/subscribe/import/data-import-step1.png" 
+    alt="Overview of the import screen in Tesoro CRM"
+    style={{maxWidth: '100%', height: 'auto', border: '1px solid #eee', borderRadius: '4px'}}
+  />
+</div>
+
+In this screen, you'll see the Tesoro CRM import module. Here you can:
+- Click "Select File" to upload your CSV file
+- Choose the correct import type (e.g., Contacts or Properties)
+- Select a mapping profile if you've created one before
+- Start the import by clicking the "Next" button
+
+### Step 2: Map Fields
+<div style={{maxWidth: '100%', overflow: 'auto', marginTop: '20px', marginBottom: '20px'}}>
+  <img 
+    src="/assets/images/en/subscribe/import/data-import-step2.png" 
+    alt="Example of a completed import template"
+    style={{maxWidth: '100%', height: 'auto', border: '1px solid #eee', borderRadius: '4px'}}
+  />
+</div>
+
+In this screen, you'll map the columns from your CSV file to the corresponding fields in Tesoro CRM:
+- **Left column**: Shows the fields in your CSV file
+- **Right column**: Shows the corresponding fields in Tesoro CRM
+- **Map**: Drag fields from left to right or use the arrows to connect them
+- **Advanced options**: Click the gear icon for additional settings
+- **Complete**: Click "Next" to start the import
+
+*Tip: Save your field mappings as a profile to reuse them later!*
+
+Below you'll find an example of how your data should be structured:
+
+```csv
+"first_name","last_name","email","phone","owner_email","address.street","address.city","address.state","address.zip_code","address.country","lead.status","lead.source","lead.stage","property_details.type","property_details.location","property_details.number_of_bedrooms","property_details.size_min","property_details.size_max","property_details.price_min","property_details.price_max","timing.looking_to","timing.timeline_min","timing.timeline_max","salutation","language","additional_information"
+"Preston","Sappson","psappson0@wired.com","+46 354 453 0889","m.stroz@codelines.io","Fulton","Göteborg","Västra Götaland","415 17","SE","lost","idealista","hot","townhouse","id",1,3,2,6,6,"sell","2023-03-24 23:51:45","2023-02-03 05:49:34","mr","en-US","donec odio justo sollicitudin ut suscipit"
+"Marian","Dockwray","mdockwray1@gov.uk","+62 213 468 1483","m.stroz@codelines.io","Dexter","Nilanapo",,,"ID","lost","social_media","hot","apartment","pulvinar",0,5,4,7,1,"sell","2023-07-01 17:06:02","2023-05-11 09:35:03","dr","co","velit donec diam neque vestibulum eget vulputate"
+```
+
+:::warning
+Carefully check the imported data for completeness and accuracy.
+:::
+
+## Step 4: Engage and Train Your Team
+
+### Team Training
+
+Schedule a training session for your team to familiarize them with Tesoro CRM. Focus on:
+- Basic navigation and user interface
+- Key features and workflows
+- How to perform common tasks
+- Where to find help if you get stuck
+
+### Key Users
+
+Ensure the following key users are involved in the implementation process:
+- System administrators (responsible for user management)
+- Team leaders (can help train their team)
+- Super users (enthusiastic team members who can assist others)
+
+### Communication Plan
+- Organiseer regelmatige updates over het implementatieproces
+
+## Stap 5: Regel e-mailintegratie en -migratie
+
+{/* PLACEHOLDER_IMAGE: /assets/images/nl/subscribe/email-integratie.png
+   Beschrijving: Overzicht van e-mailintegratie en migratieproces
+   Afmetingen: 1000x600 */}
+
+### E-mailintegratie
+Tesoro CRM werkt naadloos samen met:
+- Microsoft 365 (aanbevolen)
+- Google Workspace
+
+### Email Migration (Optional)
+
+If you're switching from another email system, we recommend seeking professional help. A reliable partner for this is:
+
+**Apps Implantadores**  
+Website: [appsimplantadores.com](https://www.appsimplantadores.com)  
+Specialized in email migrations for real estate offices in Spain
+
+### Important Considerations:
+- Each user needs a unique email address
+- Check if your current email provider is supported
+- Consider potential migration costs when switching providers
+- Plan sufficient time for the migration, especially with large amounts of email data
+
+## Step 6: Set Up Payment Information
+
+### Billing Details
+- Enter your company information for billing
+- Verify that all details are correct
+- Save the information
+
+### Payment Method
+- Choose your preferred payment method
+- Enter the required details
+- Confirm your payment information
+
+### Billing History
+- View your invoices and payments
+- Download invoices if needed
+- Check your billing history
+
+## Step 7: Plan the Onboarding
+
+{/* PLACEHOLDER_IMAGE: /assets/images/en/subscribe/onboarding-steps.png
+   Description: Infographic showing the 4 steps of the onboarding process
+   Dimensions: 1000x600 */}
+
+### Step 1: Introduction Call (30 min)
+- Meet your dedicated contact person
+- Discuss goals and expectations
+- Establish the timeline
+
+### Step 2: Technical Implementation (1-2 weeks)
+- Set up your Tesoro environment
+- Connect email and other integrations
+- Import existing data
+
+### Step 3: Training (1-2 sessions)
+- Overview of key features
+- Practice with real-world examples
+- Q&A session
+
+### Step 4: Go-Live and Follow-up
+- Official launch
+- Additional support during the first weeks
+- 30-day evaluation
+
+## Additional Support
+
+### Implementation Assistance
+
+Need extra help with implementation? Our certified partners can assist with:
+- Data migration
+- Process customization
+- Team training
+- Technical integrations
+
+### Contact Information
+
+For questions or support, please contact:
+- Email: support@tesoro.estate
+- Phone: +31 20 123 4567
+- Live chat: available in your Tesoro CRM account
+
+## Frequently Asked Questions
+
+### How long until I can get started?
+You can start immediately after signing up. Full implementation typically takes 1-2 weeks.
+
+### Can I import my existing data?
+Yes, we support importing contacts, properties, and other relevant data. Contact us for a customized recommendation.
+
+### Is training included?
+Yes, we provide standard training for your team. Additional training is available at an extra cost.
+
+## Next Steps
+
+1. **Confirm your email address** by clicking the link in the confirmation email
+2. **Complete your profile** with company details
+3. **Schedule an introduction call** with your personal onboarding manager
+4. **Prepare your team** for the upcoming changes
+
+Do you have any questions? Our team is here to help you with every step of the process. Good luck with Tesoro CRM!
+
+{/* PLACEHOLDER_IMAGE: /assets/images/en/subscribe/onboarding-image.png
+   Description: Happy team working with Tesoro CRM
+   Dimensions: 1200x600 */}
+
+By following these steps, you'll ensure a smooth transition to Tesoro CRM. Our team is ready to guide and support you throughout the process.
+
+Do you have any questions or would you like to get started right away? Please contact your account manager or send an email to [support@tesorocrm.com](mailto:support@tesorocrm.com).
+
+We look forward to working with you and your team on Tesoro CRM!
