@@ -8,10 +8,105 @@ Deze repository bevat de officiële documentatie voor Tesoro CRM, gebouwd met As
 
 Tesoro Docs is een meertalige documentatiewebsite die gebruikers helpt bij het gebruik van het Tesoro CRM-platform. De documentatie is beschikbaar in het Nederlands, Engels en Spaans, met Nederlands als standaardtaal.
 
+## 🌐 Taalbeheer & Fallback-strategie
+
+### Standaardtaal
+- **Nederlands** is ingesteld als standaardtaal (defaultLocale)
+- Dit is de taal die wordt getoond wanneer er geen specifieke taal is opgegeven
+
+### Vertalingsfallbacks
+Wanneer een vertaling ontbreekt:
+1. Het systeem valt terug op de Nederlandse versie van de pagina
+2. Indien de Nederlandse versie ook niet beschikbaar is, wordt een 404-pagina getoond
+
+### Technische implementatie
+```typescript
+// astro.config.mjs
+export default defineConfig({
+  i18n: {
+    defaultLocale: 'nl',
+    locales: ['nl', 'en', 'es'],
+    fallback: {
+      default: 'nl' // Val altijd terug op Nederlands
+    }
+  },
+  // ... overige configuratie
+});
+```
+
+## 🖼️ Afbeeldingsbeheer & Conventies
+
+### Nieuwe Afbeeldingsstructuur (vanaf juni 2024)
+
+```
+src/
+  └── assets/
+      └── images/              # Hoofdmap voor alle afbeeldingen
+          ├── en/             # Engelse afbeeldingen
+          │   └── [sectie]/   # Bijv. subscribe, settings, etc.
+          ├── es/             # Spaanse afbeeldingen
+          │   └── [sectie]/
+          └── nl/             # Nederlandse afbeeldingen
+              └── [sectie]/
+```
+
+### Hoe afbeeldingen te importeren
+
+Gebruik de `@images` alias voor consistente imports:
+
+```mdx
+import { Image } from 'astro:assets';
+import afbeelding from '@images/nl/sectie/bestandsnaam.png';
+
+<Image 
+  src={afbeelding} 
+  alt="Beschrijvende tekst"
+  width={800}
+  height={450}
+  format="webp"
+  quality={80}
+/>
+```
+
+### Bestandsnaamconventies
+
+1. **Consistente naamgeving**:
+   - Gebruik kleine letters en koppeltekens
+   - Voorbeeld: `register-1-personal-info.png`
+
+2. Genummerde stappen:
+   - Begin met een volgnummer (bijv. `1-`, `2-`)
+   - Gevolgd door een beschrijvende naam
+   - Voorbeeld: `4-verify-email.png`
+
+3. Taalspecifieke aanpassingen:
+   - Houd de bestandsnamen consistent tussen talen
+   - Gebruik Engelse termen in bestandsnamen
+   - Vertaal alleen de mapnamen waar nodig
+
+### Technische configuratie
+
+De `@images` alias is geconfigureerd in `astro.config.mjs`:
+
+```javascript
+// astro.config.mjs
+import { fileURLToPath } from 'node:url';
+
+export default defineConfig({
+  vite: {
+    resolve: {
+      alias: {
+        '@images': fileURLToPath(new URL('./src/assets/images', import.meta.url))
+      }
+    }
+  },
+  // ...
+});
+```
+
 ## 🛠️ Installatie
 
 ### Vereisten
-
 - Node.js (versie 16 of hoger)
 - npm (komt mee met Node.js)
 
@@ -20,8 +115,8 @@ Tesoro Docs is een meertalige documentatiewebsite die gebruikers helpt bij het g
 1. Clone de repository:
 
    ```bash
-   git clone https://github.com/yourusername/tesoro-docs.git
-   cd tesoro-docs
+   git clone https://github.com/tesoro-crm/kb.git
+   cd kb-main
    ```
 
 2. Installeer de afhankelijkheden:
@@ -61,6 +156,13 @@ Tesoro Docs is een meertalige documentatiewebsite die gebruikers helpt bij het g
 ## 🖼️ Afbeeldingsoptimalisatie
 
 Dit project gebruikt Astro's ingebouwde afbeeldingsoptimalisatie om afbeeldingen automatisch te comprimeren en te converteren naar moderne formaten zoals WebP.
+
+### Aanbevolen werkwijze:
+1. Plaats afbeeldingen in de juiste taalmap: `src/assets/images/[taal]/[sectie]/`
+2. Gebruik de `@images` alias voor imports
+3. Zorg voor consistente bestandsnamen tussen talen
+4. Optimaliseer afbeeldingen voor het web (aanbevolen: WebP-formaat)
+5. Gebruik beschrijvende alt-teksten voor toegankelijkheid
 
 ### Hoe afbeeldingen toe te voegen:
 
