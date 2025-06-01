@@ -1,0 +1,320 @@
+---
+title: Preparación para Tesoro CRM
+description: Guía completa para una transición fluida a Tesoro CRM
+sidebar:
+  order: 1
+lang: es
+---
+
+**¡Bienvenido a Tesoro CRM!** Una buena preparación es clave para un comienzo exitoso. Esta guía te llevará paso a paso a través del proceso de preparación para que puedas aprovechar al máximo todas las funcionalidades.
+
+{/* PLACEHOLDER_IMAGE: /assets/images/es/suscribir/encabezado-preparacion.png
+   Descripción: Vista general del panel de control de Tesoro CRM con las funciones principales destacadas
+   Dimensiones: 1200x600 */}
+
+## Paso 1: Define tus objetivos y expectativas
+
+Antes de comenzar con la transición, es importante tener claro lo que deseas lograr con Tesoro CRM:
+
+- ¿Qué desafíos quieres resolver?
+- ¿Qué procesos deseas optimizar?
+- ¿Qué informes son esenciales para tus operaciones comerciales?
+- ¿Cuáles son tus expectativas sobre la experiencia del usuario?
+
+## Paso 2: Mapea tu equipo y procesos
+
+### Equipo y roles
+
+:::caution
+Asegúrate de que siempre haya al menos un Administrador para gestionar el sistema.
+:::
+
+Tesoro CRM tiene dos roles principales:
+
+**Administrador**: Tiene los permisos más altos y puede configurar los ajustes de la empresa, crear e invitar usuarios.
+
+**Empleado**: Tiene los mismos derechos que un administrador, excepto en la configuración, pero no puede modificar los ajustes de la empresa ni gestionar usuarios.
+
+### Flujo de trabajo actual
+
+**Sistemas actuales:**
+- ¿Qué software de CRM estás utilizando actualmente?
+- ¿Utilizas sistemas separados para correo electrónico, calendario o gestión de documentos?
+- ¿Trabajas con software o portales inmobiliarios específicos?
+
+**Procesos de trabajo:**
+- Mapea tus flujos de trabajo actuales:
+  - Gestión de leads (¿cómo se hace el seguimiento de los leads?)
+  - Flujo de ventas (pasos desde el lead hasta el cierre)
+  - Informes (¿qué datos necesitas?)
+  - Gestión de documentos (¿dónde se almacenan los documentos?)
+
+### Portales Inmobiliarios
+
+Crea un resumen de todos los portales en los que estés activo, como:
+- Idealista (a través de API)
+- Fotocasa (integración futura)
+- Otras plataformas relevantes
+
+Para cada portal, necesitamos:
+- Nombre del portal
+- Código ILC (solo para Idealista)
+- Persona de contacto en el portal (nombre, correo electrónico, teléfono)
+- Claves API actuales o credenciales de inicio de sesión
+- Requisitos o necesidades específicas para la integración
+
+*Nota:* Para algunos portales (como Idealista), necesitamos notificar oficialmente sobre el cambio a Tesoro CRM. Ten esto en cuenta en tu planificación.
+
+## Paso 3: Prepara tus datos
+
+{/* PLACEHOLDER_IMAGE: /assets/images/es/suscribir/migracion-crm.png
+   Descripción: Plan paso a paso para la migración con iconos
+   Dimensiones: 800x400 */}
+
+### Datos a migrar
+
+:::tip
+Siempre haz una copia de seguridad de tus datos existentes antes de comenzar la migración.
+:::
+
+- Información de clientes y contactos
+- Transacciones activas y completadas
+- Documentos y archivos adjuntos
+- Citas y tareas
+- Notas e historial de comunicación
+
+### Información del CRM actual
+
+Para una migración sin problemas, necesitamos:
+- Nombre y versión de tu sistema CRM actual
+- Opciones de exportación disponibles (CSV, Excel, API)
+- Cómo están organizados actualmente tus datos
+- Relaciones importantes entre diferentes tipos de datos
+
+### Estructura de datos en Tesoro CRM
+
+En Tesoro, los contactos se gestionan en una sola base de datos y se pueden clasificar como Lead o Contacto:
+
+- **Leads**: Ingresan a través de la interfaz de leads y se tratan como tales.
+- **Contactos**: Una vez que un lead se convierte en una operación y un contacto, la clasificación cambia a Contacto.
+
+### Instrucciones de importación
+
+:::caution
+**Aviso importante sobre la importación de datos**
+
+La importación de datos suele ser más compleja de lo que parece. Debido a las diferencias en las estructuras de datos entre sistemas, pueden surgir problemas como:
+
+- Mapeo incorrecto de campos
+- Pérdida de datos
+- Registros duplicados o incompletos
+- Problemas con caracteres especiales o formato
+
+Por lo tanto, te recomendamos encarecidamente que te pongas en contacto con tu Gerente de Éxito de Tesoro CRM antes de comenzar a importar. Ellos pueden guiarte en el proceso y asegurarse de que tus datos se transfieran correctamente.
+:::
+
+Puedes importar datos a Tesoro CRM de varias maneras, según el tipo de datos:
+
+1. **Importar Leads**
+   - Ve a: [Importar Leads](https://crm.tesoro.estate/leads/import)
+   - O haz clic en el botón en la esquina superior derecha de la vista general de Leads y selecciona "Importar"
+
+2. **Importar Relaciones**
+   - Ve a: [Importar Relaciones](https://crm.tesoro.estate/relations/import)
+   - O haz clic en el botón en la esquina superior derecha de la vista general de Relaciones y selecciona "Importar"
+
+3. **Importar Contactos**
+   - Ve a: [Importar Contactos](https://crm.tesoro.estate/contacts/import)
+   - O haz clic en el botón en la esquina superior derecha de la vista general de Contactos y selecciona "Importar"
+
+4. **Importar Operaciones** (próximamente)
+   - Se agregará pronto
+
+### Plantillas disponibles
+
+Para una importación de datos eficiente, hemos preparado plantillas prácticas. Puedes descargarlas y completarlas fácilmente con tus propios datos:
+
+- [📥 Plantilla para importar Leads](#)
+- [📥 Plantilla para importar Relaciones](#)
+- [📥 Plantilla para importar Contactos](#)
+
+:::tip
+Sigue la estructura de la plantilla exactamente para evitar errores de importación. Asegúrate de descargar siempre la versión más reciente de las plantillas utilizando los enlaces anteriores.
+:::
+
+### Paso 1: Abre la pantalla de importación
+<div style={{maxWidth: '100%', overflow: 'auto', marginBottom: '20px'}}>
+  <img 
+    src="/assets/images/es/suscribir/importar/paso-importacion-1.png" 
+    alt="Vista general de la pantalla de importación en Tesoro CRM"
+    style={{maxWidth: '100%', height: 'auto', border: '1px solid #eee', borderRadius: '4px'}}
+  />
+</div>
+
+En esta pantalla, verás el módulo de importación de Tesoro CRM. Aquí puedes:
+- Hacer clic en "Seleccionar archivo" para cargar tu archivo CSV
+- Elegir el tipo de importación correcto (por ejemplo, Contactos o Propiedades)
+- Seleccionar un perfil de mapeo si has creado uno anteriormente
+- Iniciar la importación haciendo clic en el botón "Siguiente"
+
+### Paso 2: Mapea los campos
+<div style={{maxWidth: '100%', overflow: 'auto', marginTop: '20px', marginBottom: '20px'}}>
+  <img 
+    src="/assets/images/es/suscribir/importar/paso-importacion-2.png" 
+    alt="Ejemplo de una plantilla de importación completada"
+    style={{maxWidth: '100%', height: 'auto', border: '1px solid #eee', borderRadius: '4px'}}
+  />
+</div>
+
+En esta pantalla, asignarás las columnas de tu archivo CSV a los campos correspondientes en Tesoro CRM:
+- **Columna izquierda**: Muestra los campos en tu archivo CSV
+- **Columna derecha**: Muestra los campos correspondientes en Tesoro CRM
+- **Mapear**: Arrastra los campos de izquierda a derecha o usa las flechas para conectarlos
+- **Opciones avanzadas**: Haz clic en el icono de engranaje para configuraciones adicionales
+- **Completar**: Haz clic en "Siguiente" para iniciar la importación
+
+*Consejo: ¡Guarda tus asignaciones de campos como perfil para usarlas más tarde!*
+
+A continuación, encontrarás un ejemplo de cómo podrían estructurarse tus datos:
+
+```csv
+"first_name","last_name","email","phone","owner_email","address.street","address.city","address.state","address.zip_code","address.country","lead.status","lead.source","lead.stage","property_details.type","property_details.location","property_details.number_of_bedrooms","property_details.size_min","property_details.size_max","property_details.price_min","property_details.price_max","timing.looking_to","timing.timeline_min","timing.timeline_max","salutation","language","additional_information"
+"Preston","Sappson","psappson0@wired.com","+46 354 453 0889","m.stroz@codelines.io","Fulton","Göteborg","Västra Götaland","415 17","SE","lost","idealista","hot","townhouse","id",1,3,2,6,6,"sell","2023-03-24 23:51:45","2023-02-03 05:49:34","mr","es-ES","datos de ejemplo"
+"Marian","Dockwray","mdockwray1@gov.uk","+62 213 468 1483","m.stroz@codelines.io","Dexter","Nilanapo",,,"ID","lost","social_media","hot","apartment","pulvinar",0,5,4,7,1,"sell","2023-07-01 17:06:02","2023-05-11 09:35:03","sra","es","más datos de ejemplo"
+```
+
+:::warning
+Verifica cuidadosamente los datos importados para asegurarte de que estén completos y sean precisos.
+:::
+
+## Paso 4: Involucra y capacita a tu equipo
+
+### Capacitación del equipo
+
+Programa una sesión de capacitación para que tu equipo se familiarice con Tesoro CRM. Enfócate en:
+- Navegación básica e interfaz de usuario
+- Funciones y flujos de trabajo clave
+- Cómo realizar tareas comunes
+- Dónde encontrar ayuda si te quedas atascado
+
+### Usuarios clave
+
+Asegúrate de que los siguientes usuarios clave participen en el proceso de implementación:
+- Administradores del sistema (responsables de la gestión de usuarios)
+- Líderes de equipo (pueden ayudar a capacitar a su equipo)
+- Superusuarios (miembros del equipo entusiastas que pueden ayudar a los demás)
+
+### Plan de comunicación
+
+Mantén a tu equipo informado sobre la implementación:
+- Programa actualizaciones periódicas sobre el progreso
+- Comparte consejos y trucos útiles
+- Celebra los éxitos y los hitos alcanzados
+
+## Paso 5: Configura la integración de correo electrónico
+
+### Integración de correo electrónico
+
+Configura tu correo electrónico para una comunicación fluida:
+- Vincula tu cuenta de correo electrónico comercial a Tesoro CRM
+- Configura plantillas de correo electrónico para mensajes comunes
+- Establece el seguimiento de correo electrónico para leads y clientes
+
+### Migración de correo electrónico (Opcional)
+
+¿Deseas importar correos electrónicos antiguos? Esto puede ser útil para:
+- Mantener el historial de comunicación
+- Buscar en correspondencia pasada
+- Preservar el contexto para las relaciones con clientes existentes
+
+### Consideraciones importantes:
+- Cada usuario necesita una dirección de correo electrónico única
+- Verifica si tu proveedor de correo electrónico actual es compatible
+- Ten en cuenta los posibles costos de migración al cambiar de proveedor
+- Planifica suficiente tiempo para la migración, especialmente con grandes volúmenes de datos de correo electrónico
+
+## Paso 6: Configura la información de pago
+
+### Detalles de facturación
+- Ingresa la información de tu empresa para facturación
+- Verifica que todos los detalles sean correctos
+- Guarda la información
+
+### Método de pago
+- Elige tu método de pago preferido
+- Ingresa los datos requeridos
+- Confirma tu información de pago
+
+### Historial de facturación
+- Revisa tus facturas y pagos
+- Descarga facturas si es necesario
+- Consulta tu historial de facturación
+
+## Paso 7: Planifica la incorporación
+
+### Paso 1: Llamada de presentación (30 min)
+- Conoce a tu persona de contacto asignada
+- Discute objetivos y expectativas
+- Establece la línea de tiempo
+
+### Paso 2: Implementación técnica (1-2 semanas)
+- Configura tu entorno de Tesoro
+- Conecta el correo electrónico y otras integraciones
+- Importa datos existentes
+
+### Paso 3: Capacitación (1-2 sesiones)
+- Descripción general de las funciones clave
+- Práctica con ejemplos del mundo real
+- Sesión de preguntas y respuestas
+
+### Paso 4: Puesta en marcha y seguimiento
+- Lanzamiento oficial
+- Soporte adicional durante las primeras semanas
+- Evaluación a los 30 días
+
+## Soporte adicional
+
+### Asistencia en la implementación
+
+¿Necesitas ayuda adicional con la implementación? Nuestros socios certificados pueden ayudarte con:
+- Migración de datos
+- Personalización de procesos
+- Capacitación del equipo
+- Integraciones técnicas
+
+### Información de contacto
+
+Para preguntas o soporte, por favor contacta con:
+- Correo electrónico: soporte@tesoro.estate
+- Teléfono: +34 91 123 45 67
+- Chat en vivo: disponible en tu cuenta de Tesoro CRM
+
+## Preguntas frecuentes
+
+### ¿Cuánto tiempo tardaré en poder comenzar?
+Puedes comenzar inmediatamente después de registrarte. La implementación completa generalmente toma de 1 a 2 semanas.
+
+### ¿Puedo importar mis datos existentes?
+Sí, admitimos la importación de contactos, propiedades y otros datos relevantes. Contáctanos para una recomendación personalizada.
+
+### ¿La capacitación está incluida?
+Sí, ofrecemos capacitación estándar para tu equipo. Hay capacitación adicional disponible por un costo extra.
+
+## Próximos pasos
+
+1. **Confirma tu dirección de correo electrónico** haciendo clic en el enlace del correo de confirmación
+2. **Completa tu perfil** con los detalles de la empresa
+3. **Programa una llamada de presentación** con tu gerente de incorporación personal
+4. **Prepara a tu equipo** para los próximos cambios
+
+¿Tienes alguna pregunta? Nuestro equipo está aquí para ayudarte en cada paso del proceso. ¡Buena suerte con Tesoro CRM!
+
+{/* PLACEHOLDER_IMAGE: /assets/images/es/suscribir/imagen-incorporacion.png
+   Descripción: Equipo feliz trabajando con Tesoro CRM
+   Dimensiones: 1200x600 */}
+
+Al seguir estos pasos, asegurarás una transición fluida a Tesoro CRM. Nuestro equipo está listo para guiarte y apoyarte durante todo el proceso.
+
+¿Tienes alguna pregunta o te gustaría comenzar de inmediato? Por favor, contacta a tu gerente de cuenta o envía un correo electrónico a [soporte@tesorocrm.com](mailto:soporte@tesorocrm.com).
+
+¡Esperamos trabajar contigo y tu equipo en Tesoro CRM!
