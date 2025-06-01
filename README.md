@@ -34,37 +34,74 @@ export default defineConfig({
 });
 ```
 
-## 🖼�️ Afbeeldingsbeheer & Fallbacks
+## 🖼️ Afbeeldingsbeheer & Conventies
 
-### Afbeeldingsstructuur
+### Nieuwe Afbeeldingsstructuur (vanaf juni 2024)
+
 ```
-src/assets/
-  └── docs/
-      ├── nl/          # Nederlandse afbeeldingen
-      ├── en/          # Engelse afbeeldingen
-      └── fallback/    # Standaard afbeeldingen
+src/
+  └── assets/
+      └── images/              # Hoofdmap voor alle afbeeldingen
+          ├── en/             # Engelse afbeeldingen
+          │   └── [sectie]/   # Bijv. subscribe, settings, etc.
+          ├── es/             # Spaanse afbeeldingen
+          │   └── [sectie]/
+          └── nl/             # Nederlandse afbeeldingen
+              └── [sectie]/
 ```
 
-### Fallback-strategie voor afbeeldingen
-1. **Eerst geprobeerd**: Taalspecifieke afbeelding (bijv. `/nl/path/to/image.jpg`)
-2. **Indien niet gevonden**: Nederlandse versie (`/nl/path/to/image.jpg`)
-3. **Laatste redmiddel**: Algemene fallback-afbeelding (`/fallback/image-not-found.svg`)
+### Hoe afbeeldingen te importeren
 
-### Aanbevolen component
-Gebruik de `ImageWithFallback` component voor consistente afbeeldingsweergave:
+Gebruik de `@images` alias voor consistente imports:
 
 ```mdx
----
-import ImageWithFallback from '@components/ImageWithFallback.astro';
----
+import { Image } from 'astro:assets';
+import afbeelding from '@images/nl/sectie/bestandsnaam.png';
 
-<ImageWithFallback 
-  src="/path/to/image.jpg"
+<Image 
+  src={afbeelding} 
   alt="Beschrijvende tekst"
   width={800}
   height={450}
-  fallbackSrc="/fallback/image-not-found.svg"
+  format="webp"
+  quality={80}
 />
+```
+
+### Bestandsnaamconventies
+
+1. **Consistente naamgeving**:
+   - Gebruik kleine letters en koppeltekens
+   - Voorbeeld: `register-1-personal-info.png`
+
+2. Genummerde stappen:
+   - Begin met een volgnummer (bijv. `1-`, `2-`)
+   - Gevolgd door een beschrijvende naam
+   - Voorbeeld: `4-verify-email.png`
+
+3. Taalspecifieke aanpassingen:
+   - Houd de bestandsnamen consistent tussen talen
+   - Gebruik Engelse termen in bestandsnamen
+   - Vertaal alleen de mapnamen waar nodig
+
+### Technische configuratie
+
+De `@images` alias is geconfigureerd in `astro.config.mjs`:
+
+```javascript
+// astro.config.mjs
+import { fileURLToPath } from 'node:url';
+
+export default defineConfig({
+  vite: {
+    resolve: {
+      alias: {
+        '@images': fileURLToPath(new URL('./src/assets/images', import.meta.url))
+      }
+    }
+  },
+  // ...
+});
 ```
 
 ## 🛠️ Installatie
@@ -121,10 +158,11 @@ import ImageWithFallback from '@components/ImageWithFallback.astro';
 Dit project gebruikt Astro's ingebouwde afbeeldingsoptimalisatie om afbeeldingen automatisch te comprimeren en te converteren naar moderne formaten zoals WebP.
 
 ### Aanbevolen werkwijze:
-1. Plaats afbeeldingen in de juiste taalmap: `src/assets/docs/[taal]/[sectie]/`
-2. Zorg voor een Nederlandse versie van elke afbeelding
-3. Gebruik de `ImageWithFallback` component voor betrouwbare weergave
+1. Plaats afbeeldingen in de juiste taalmap: `src/assets/images/[taal]/[sectie]/`
+2. Gebruik de `@images` alias voor imports
+3. Zorg voor consistente bestandsnamen tussen talen
 4. Optimaliseer afbeeldingen voor het web (aanbevolen: WebP-formaat)
+5. Gebruik beschrijvende alt-teksten voor toegankelijkheid
 
 ### Hoe afbeeldingen toe te voegen:
 
