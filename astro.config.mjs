@@ -1,7 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import sitemap from '@astrojs/sitemap';
 import { fileURLToPath } from 'node:url';
+import { readFileSync } from 'fs';
+
+// Read package.json for version info
+const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8'));
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,6 +35,16 @@ export default defineConfig({
     ]
   },
   integrations: [
+    sitemap({
+      // Customize sitemap URLs
+      customPages: ['https://support.tesoro.estate'],
+      // Change frequency for different sections
+      changefreq: 'weekly',
+      // Priority for different sections
+      priority: 0.8,
+      // Last modification time
+      lastmod: new Date(),
+    }),
     starlight({
       title: 'Tesoro Docs',
       customCss: [
@@ -52,7 +67,25 @@ export default defineConfig({
       },
       social: {
         discord: 'https://github.com/withastro/starlight',
+        github: 'https://github.com/tesoro-crm',
+        twitter: 'https://twitter.com/TesoroCRM',
+        linkedin: 'https://linkedin.com/company/tesorocrm',
       },
+      
+      // SEO Configuration
+      head: [
+        // Favicon
+        { tag: 'link', attrs: { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' } },
+        // Canonical URL
+        { tag: 'link', attrs: { rel: 'canonical', href: 'https://support.tesoro.estate' } },
+        // Open Graph / Facebook
+        { tag: 'meta', attrs: { property: 'og:type', content: 'website' } },
+        { tag: 'meta', attrs: { property: 'og:site_name', content: 'Tesoro CRM Documentation' } },
+        { tag: 'meta', attrs: { property: 'og:image', content: 'https://support.tesoro.estate/og-image.jpg' } },
+        // Twitter
+        { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
+        { tag: 'meta', attrs: { name: 'twitter:image', content: 'https://support.tesoro.estate/twitter-card.jpg' } },
+      ],
       logo: {
         light: './src/assets/tesoro-logo-light.svg',
         dark: './src/assets/tesoro-logo-dark.svg',
