@@ -1,0 +1,31 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://support.tesoro.estate/sitemap-index.xml
+Sitemap: https://support.tesoro.estate/sitemap-0.xml
+
+# Crawl-delay: 10
+# Uncomment and adjust the crawl delay if needed to prevent server overload
+
+# Disallow specific directories if needed
+# Disallow: /private/
+# Disallow: /admin/
+
+# Allow all static files
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
+Allow: /*.eot$
+
+# Host
+Host: https://support.tesoro.estate
