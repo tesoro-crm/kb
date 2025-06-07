@@ -4,12 +4,12 @@ import path from 'path';
 // Basis configuratie met bekende video's
 const VIDEOS_CONFIG = {
   FILTERS_VOORNAAM: {
-    id: 'e8c2fc778291443cb296387d406928af',
+    id: 'f5c11c37fa3241909b123961e9157aca',  // cc6b55c5-87ea-4749-a59c-56733268afa1.webm
     title: 'Filteren op voornaam',
     description: 'Demonstratie van het filteren op het veld Voornaam in TesoroCRM'
   },
   FILTERS_OPEN_SLUITEN: {
-    id: '74e3bf754db943a398ea67deb7e62aad',
+    id: 'd5c0d7f5e74c4ec6a7592622808c89a9',  // close-open-filter.webm
     title: 'Filterpaneel openen en sluiten',
     description: 'Demonstratie van het openen en sluiten van het filterpaneel in TesoroCRM'
   }
