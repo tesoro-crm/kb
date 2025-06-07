@@ -1,0 +1,262 @@
+---
+title: Werken met Filters
+description: Leer hoe je filters effectief kunt gebruiken in TesoroCRM
+---
+
+## Inleiding
+Filters zijn een krachtig hulpmiddel in TesoroCRM waarmee je snel specifieke gegevens kunt vinden door te filteren op basis van bepaalde criteria.
+
+## Het filterpaneel openen
+1. Ga naar een willekeurige module (bijv. Leads, Contacten, etc.)
+2. Klik op het filterpictogram in de linkerbovenhoek
+
+### Video: Filteren op voornaam
+
+Klik op de onderstaande afbeelding om de video te bekijken:
+
+<div style="text-align: center; margin: 2rem 0;">
+  <h4 id="videoTitle" style="margin-bottom: 1rem;">Video wordt geladen...</h4>
+  <div id="videoContainer">
+    <div 
+      id="videoThumbnail"
+      data-video-id="e8c2fc778291443cb296387d406928af"
+      data-title="Filteren op voornaam"
+      data-description="Demonstratie van het filteren op het veld Voornaam in TesoroCRM"
+      style="
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+      ">
+      <img 
+        src="https://customer-5j7pwes53hyjitp3.cloudflarestream.com/e8c2fc778291443cb296387d406928af/thumbnails/thumbnail.jpg" 
+        alt="Video over filteren op voornaam"
+        style="
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        "
+      />
+      <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,0.3);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      ">
+        <div style="
+          background: rgba(0,0,0,0.7);
+          border-radius: 50%;
+          width: 80px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        ">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div id="videoPlayer" style="display: none;">
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          id="videoFrame"
+          src=""
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+          "
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <button 
+        onclick="document.getElementById('videoThumbnail').style.display = 'block'; document.getElementById('videoPlayer').style.display = 'none'; document.getElementById('videoFrame').src = '';"
+        style="
+          display: block;
+          margin: 10px auto 0;
+          padding: 8px 16px;
+          background: #f0f0f0;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          cursor: pointer;
+        "
+      >
+        Video verbergen
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline src="/scripts/video-handler.js"></script>
+
+```plaintext
+AFBEELDING: filter_paneel_open.png
+----------------------------------
+1. Schermafbeelding van het TesoroCRM dashboard
+2. Rode cirkel rond het filterpictogram (filter icoon) in de linkerbovenhoek
+3. Toon zowel de gesloten (witte icoon) als geopende toestand (actief filterpaneel)
+4. Toon de muisaanwijzer die op het icoon klikt
+5. Voeg een kleine animatiepijl toe die naar het icoon wijst
+
+Afmetingen: 800x500px
+Stijl: Screenshot met annotaties
+Kleur: Rode accenten voor belangrijke elementen
+```
+
+
+## Basis filteren
+1. **Altijd eerst:** Klik op "Clear All" om bestaande filters te wissen
+2. **Zoek een veld:** Typ in het zoekveld bovenaan om snel een veld te vinden (bijv. typ "naam" om "Voornaam", "Achternaam" of "Bedrijfsnaam" te vinden)
+3. Selecteer het gewenste veld uit de lijst
+4. Kies een waarde of typ een zoekterm in het filterveld
+5. Klik op "Apply Filter" of druk op Enter
+
+:::note
+Het bovenste zoekveld is **alleen** om velden te vinden, niet om te zoeken naar gegevens. 
+- Typ bijvoorbeeld "telefoon" om alle telefoonvelden te vinden
+- Of typ "datum" om datumgerelateerde velden te vinden
+:::
+
+:::warning
+Vergeet niet op "Clear All" te klikken voordat je nieuwe filters instelt. Oude filters kunnen onverwacht je zoekresultaten beïnvloeden!
+:::
+
+```plaintext
+AFBEELDING: filter_clear_all.png
+----------------------------------
+1. Close-up van het geopende filterpaneel
+2. Rode kader rond de "Clear All" knop
+3. Rode pijl die naar de knop wijst
+4. Toon ook de status voor en na het indrukken (bijv. grijze tekst die verandert in zwart)
+5. Voeg een kleine tooltip toe die verschijnt bij hover: "Klik hier om alle actieve filters te wissen"
+
+Afmetingen: 600x300px
+Stijl: Screenshot met highlight
+Kleur: Rode accenten voor belangrijke elementen
+
+<script is:inline src="/scripts/video-handler.js"></script>
+```
+
+
+:::tip
+## Werken met veelgebruikte filters
+
+Gebruik je vaak dezelfde filters? Overweeg dan een View aan te maken! 
+
+Dit is vooral handig als je:
+- Regelmatig met dezelfde criteria werkt
+- Sneller toegang nodig hebt tot je veelgebruikte filters
+- Liever niet steeds opnieuw dezelfde filters instelt
+
+### Waarom een View handig is:
+- **Tijdbesparend**: Je filters worden opgeslagen
+- **Minder werk**: Geen herhaald instellen nodig
+- **Extra voordeel**: In een View kun je ook je kolomindeling aanpassen voor nog beter overzicht
+
+> Tip: Maak je een View? Stel dan eerst je gewenste kolomindeling in, en daarna de filters voor het beste resultaat.
+:::
+
+## Geavanceerde technieken
+### Meerdere filters combineren
+1. Voeg een filter toe (bijv. "Voornaam" bevat "Jan")
+2. Klik op "+" om een extra filter toe te voegen
+3. Kies een ander veld (bijv. "Achternaam" begint met "Jans")
+
+:::tip
+Gebruik verschillende filtertypes:
+- "bevat" voor gedeeltelijke overeenkomsten
+- "begint met" voor het begin van een woord
+- "is gelijk aan" voor exacte overeenkomsten
+:::
+
+### Snel zoeken in lange lijsten
+- Gebruik het zoekveld in dropdowns om snel opties te vinden
+- Bijvoorbeeld: typ "lead" om snel "Lead Type" of "Lead Stage" te vinden
+
+```plaintext
+AFBEELDING: filter_search_field.png
+----------------------------------
+1. Schermafbeelding van het geopende filterpaneel
+2. Geel gemarkeerd zoekveld bovenaan met de tekst "Typ om velden te zoeken..."
+3. Toon een zoekopdracht naar "naam" met de volgende resultaten in een dropdown:
+   - Voornaam
+   - Achternaam
+   - Bedrijfsnaam
+   - Volledige naam
+4. Rode pijl die van de zoekbalk naar de resultaten wijst
+5. Toelichtingstekst: "Zoek naar veldnamen, niet naar waarden"
+
+Afmetingen: 700x400px
+Stijl: Screenshot met gele markering
+Kleur: Gele highlight voor zoekveld
+```
+
+
+## Veelgemaakte fouten
+:::danger
+1. **Vergeten te wissen:** Oude filters blijven actief
+2. **Te specifiek:** Te veel filters geven mogelijk geen resultaten
+3. **Verkeerde operator:** Bijv. "is gelijk aan" in plaats van "bevat"
+:::
+
+## Voorbeelden
+### Voorbeeld 1: Iemand zoeken
+1. Klik op "Voornaam"
+2. Typ een deel van de naam (bijv. "Jan")
+3. Druk op Enter
+
+### Voorbeeld 2: Filteren op status
+1. Zoek naar "Stage"
+2. Selecteer de gewenste status (bijv. "Neutraal")
+3. Klik op "Apply Filter"
+
+```plaintext
+AFBEELDING: filter_multiple_active.png
+----------------------------------
+1. Schermafbeelding van een overzichtspagina (bijv. Contacten of Leads)
+2. Toon 3 actieve filters tegelijk:
+   - Status: Is gelijk aan Actief (groen label)
+   - Laatste contact: In de afgelopen 30 dagen (blauw label)
+   - Type: Klant (paars label)
+3. Toon de "Clear All" knop rechtsboven de filters
+4. Toelichting: "Meerdere filters kunnen gecombineerd worden voor specifiekere resultaten"
+5. Toon het totaalaantal resultaten dat verandert bij het toevoegen van filters
+
+Afmetingen: 900x500px
+Stijl: Screenshot met gekleurde labels
+Kleuren: Groen, blauw en paars voor de verschillende filters
+```
+
+
+## Probleemoplossing
+| Probleem | Oplossing |
+|----------|-----------|
+| Geen resultaten | Controleer of je "Clear All" hebt gebruikt |
+| Verkeerde resultaten | Controleer de ingestelde filters |
+| Veld niet zichtbaar | Gebruik het zoekveld in het filterpaneel |
+
+:::tip
+Maak gebruik van sneltoetsen:
+- `Ctrl + F` (Windows) of `Cmd + F` (Mac) om snel te zoeken in een pagina
+- `Enter` om een filter toe te passen
+- `Escape` om het filterpaneel te sluiten
+:::
