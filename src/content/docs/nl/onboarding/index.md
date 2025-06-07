@@ -3,8 +3,6 @@ title: Onboarding
 description: Start hier met Tesoro CRM - we leiden je stap voor stap door het proces
 ---
 
-# Welkom bij Tesoro CRM
-
 We zijn blij dat je er bent! Deze onboarding guide helpt je om snel en effectief aan de slag te gaan met Tesoro CRM. We behandelen de volgende onderwerpen:
 
 ## Wat kun je verwachten?

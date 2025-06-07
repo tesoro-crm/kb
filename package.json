@@ -7,12 +7,20 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "upload-videos": "node scripts/upload-videos.js",
+    "update-videos": "node --experimental-json-modules --experimental-specifier-resolution=node scripts/update-video-config.js"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.0",
     "@astrojs/starlight": "^0.32.1",
     "astro": "^5.1.5",
+    "form-data": "^4.0.0",
     "sharp": "^0.32.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "dotenv": "^16.5.0",
+    "node-fetch": "^2.7.0"
   }
 }

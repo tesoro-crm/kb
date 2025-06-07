@@ -102,6 +102,11 @@ export default defineConfig({
 					autogenerate: { directory: 'onboarding' },
 				},
 				{
+					label: 'Functies',
+					autogenerate: { directory: 'features' },
+					collapsed: false,
+				},
+				{
 					label: 'Instellingen',
 					items: [
 						{
