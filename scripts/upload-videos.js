@@ -17,14 +17,83 @@ if (!CLOUDFLARE_ACCOUNT_ID || !CLOUDFLARE_API_TOKEN) {
   process.exit(1);
 }
 
+async function getVideoByName(fileName) {
+  try {
+    const response = await fetch(
+      `https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/stream?search=${encodeURIComponent(fileName)}`,
+      {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${CLOUDFLARE_API_TOKEN}`,
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+    
+    const result = await response.json();
+    
+    if (response.ok && result.result && result.result.length > 0) {
+      // Vind de video met exact dezelfde bestandsnaam
+      return result.result.find(video => video.meta && video.meta.original_filename === fileName);
+    }
+    return null;
+  } catch (error) {
+    console.error('Fout bij ophalen video:', error.message);
+    return null;
+  }
+}
+
+async function deleteVideo(videoId) {
+  try {
+    const response = await fetch(
+      `https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/stream/${videoId}`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${CLOUDFLARE_API_TOKEN}`
+        }
+      }
+    );
+    
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.errors.map(e => e.message).join(', '));
+    }
+    
+    return true;
+  } catch (error) {
+    console.error('Fout bij verwijderen video:', error.message);
+    throw error;
+  }
+}
+
 async function uploadVideo(filePath, fileName) {
   try {
-    console.log(`Uploaden van ${fileName}...`);
+    console.log(`Verwerken van ${fileName}...`);
     
-    // Lees het videobestand
+    // Lees het videobestand en haal de bestandsgrootte op
     const fileBuffer = await fs.readFile(filePath);
+    const fileSize = (await fs.stat(filePath)).size;
     
-    // Maak FormData aan
+    // Controleer of de video al bestaat
+    const existingVideo = await getVideoByName(fileName);
+    
+    if (existingVideo) {
+      // Als de bestandsgrootte overeenkomt, is het waarschijnlijk dezelfde video
+      if (existingVideo.size === fileSize) {
+        console.log(`ℹ️  Video '${fileName}' bestaat al met dezelfde grootte. Overslaan...`);
+        console.log(`   Video ID: ${existingVideo.uid}`);
+        console.log(`   Preview: ${existingVideo.preview}`);
+        return existingVideo;
+      }
+      
+      console.log(`🔄 Bestaande video '${fileName}' heeft een andere grootte. Oude video wordt verwijderd...`);
+      await deleteVideo(existingVideo.uid);
+    }
+    
+    console.log(`⬆️  Uploaden van ${fileName}...`);
+    
+    // Maak FormData aan voor de nieuwe upload
     const form = new FormData();
     form.append('file', fileBuffer, { filename: fileName });
     form.append('requireSignedURLs', 'false');
