@@ -1,0 +1,88 @@
+---
+title: Video Component
+description: Handleiding voor het gebruik van de aangepaste Video-component in MDX-bestanden
+---
+
+# Video Component
+
+De Video-component maakt het eenvoudig om video's van Cloudflare Stream te integreren in je documentatie.
+
+## Installatie
+
+Deze component is al geïnstalleerd en beschikbaar in het project. Je hoeft niets te installeren.
+
+## Gebruik
+
+Importeer de component bovenaan je MDX-bestand:
+
+```jsx
+import Video from '../../../../components/mdx/Video.astro';
+```
+
+### Basisgebruik
+
+```jsx
+<Video 
+  videoId="jouw-video-id"
+  title="Titel van de video"
+  caption="Optioneel bijschrift onder de video"
+/>
+```
+
+### Volledig voorbeeld met alle opties
+
+```jsx
+<Video 
+  videoId="d5c0d7f5e74c4ec6a7592622808c89a9"
+  title="Demo Video"
+  caption="Dit is een demo video"
+  loop={true}
+  autoplay={true}
+  muted={true}
+  preload={true}
+  maxWidth="800px"
+  width="100%"
+/>
+```
+
+## Eigenschappen (Props)
+
+| Prop      | Type    | Verplicht | Standaardwaarde | Beschrijving |
+|-----------|---------|-----------|----------------|--------------|
+| videoId   | string  | Ja       | -              | De ID van de video in Cloudflare Stream |
+| title     | string  | Ja       | -              | Toegankelijkheidstitel voor de iframe |
+| caption   | string  | Nee      | ''             | Optioneel bijschrift onder de video |
+| loop      | boolean | Nee      | true          | Herhaal de video automatisch |
+| autoplay  | boolean | Nee      | true          | Start de video automatisch |
+| muted     | boolean | Nee      | true          | Video start gemute |
+| preload   | boolean | Nee      | true          | Laad video vooraf |
+| maxWidth  | string  | Nee      | '800px'       | Maximale breedte van de video |
+| width     | string  | Nee      | '100%'        | Breedte van de video |
+
+## Voorbeeld in de praktijk
+
+Hieronder staat een live voorbeeld van de Video-component in actie:
+
+<Video 
+  videoId="d5c0d7f5e74c4ec6a7592622808c89a9"
+  title="Demo van de Video-component"
+  caption="Dit is een voorbeeld van hoe de Video-component eruitziet"
+  loop={true}
+  autoplay={false}
+  muted={true}
+  preload={true}
+  maxWidth="800px"
+/>
+
+## Tips
+
+1. **Toegankelijkheid**: Zorg altijd voor een beschrijvende `title` voor schermlezers
+2. **Prestaties**: Gebruik `preload={false}` voor video's die niet direct zichtbaar zijn
+3. **Automatisch afspelen**: Gebruik `autoplay` en `muted` samen voor een betere gebruikerservaring
+4. **Responsiviteit**: De component is standaard responsief dankzij het 16:9 aspect ratio
+
+## Probleemoplossing
+
+- **Video wordt niet afgespeeld**: Controleer of de `videoId` correct is
+- **Foutmeldingen**: Zorg ervoor dat je de verplichte props (`videoId` en `title`) hebt opgegeven
+- **Layout problemen**: Controleer of er geen conflicterende CSS-stijlen zijn in je MDX-bestand

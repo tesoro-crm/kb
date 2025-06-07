@@ -3,6 +3,8 @@ title: Werken met Filters
 description: Leer hoe je filters effectief kunt gebruiken in TesoroCRM
 ---
 
+import Video from '../../../../components/mdx/Video.astro';
+
 ## Inleiding
 Filters zijn een krachtig hulpmiddel in TesoroCRM waarmee je snel specifieke gegevens kunt vinden door te filteren op basis van bepaalde criteria.
 
@@ -10,20 +12,16 @@ Filters zijn een krachtig hulpmiddel in TesoroCRM waarmee je snel specifieke geg
 
 Bekijk hoe je eenvoudig het filterpaneel opent en sluit:
 
-<div style="max-width: 800px; margin: 2rem auto; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe 
-      src="https://customer-5j7pwes53hyjitp3.cloudflarestream.com/d5c0d7f5e74c4ec6a7592622808c89a9/iframe?preload=true&loop=true&autoplay=true&muted=true"
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-      title="Demonstratie van het openen en sluiten van het filterpaneel"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>
-  <p style="text-align: center; color: #666; margin: 0.5rem 0; padding: 0 1rem;">
-    Demonstratie van het openen en sluiten van het filterpaneel in TesoroCRM
-  </p>
-</div>
+<Video 
+  videoId="d5c0d7f5e74c4ec6a7592622808c89a9"
+  title="Demonstratie van het openen en sluiten van het filterpaneel"
+  caption="Demonstratie van het openen en sluiten van het filterpaneel in TesoroCRM"
+  loop={true}
+  autoplay={true}
+  muted={true}
+  preload={true}
+  maxWidth="800px"
+/>
 
 ## Het filterpaneel openen
 1. Ga naar een willekeurige module (bijv. Leads, Contacten, etc.)
@@ -33,99 +31,16 @@ Bekijk hoe je eenvoudig het filterpaneel opent en sluit:
 
 Bekijk hoe je kunt filteren op voornaam:
 
-<div style="text-align: center; margin: 2rem 0;">
-  <h4 id="videoTitle" style="margin-bottom: 1rem;">Video wordt geladen...</h4>
-  <div id="videoContainer">
-    <div 
-      id="videoThumbnail"
-      data-video-id="f5c11c37fa3241909b123961e9157aca"
-      data-title="Filteren op voornaam"
-      data-description="Demonstratie van het filteren op het veld Voornaam in TesoroCRM"
-      style="
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-        max-width: 800px;
-        width: 100%;
-        margin: 0 auto;
-      ">
-      <img 
-        src="https://customer-5j7pwes53hyjitp3.cloudflarestream.com/f5c11c37fa3241909b123961e9157aca/thumbnails/thumbnail.jpg" 
-        alt="Video over filteren op voornaam"
-        style="
-          width: 100%;
-          height: auto;
-          border-radius: 8px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        "
-      />
-      <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0,0,0,0.3);
-        border-radius: 8px;
-        transition: all 0.3s ease;
-      ">
-        <div style="
-          background: rgba(0,0,0,0.7);
-          border-radius: 50%;
-          width: 80px;
-          height: 80px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.3s ease;
-        ">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-    
-    <div id="videoPlayer" style="display: none;">
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          id="videoFrame"
-          src=""
-          style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
-          "
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <button 
-        onclick="document.getElementById('videoThumbnail').style.display = 'block'; document.getElementById('videoPlayer').style.display = 'none'; document.getElementById('videoFrame').src = '';"
-        style="
-          display: block;
-          margin: 10px auto 0;
-          padding: 8px 16px;
-          background: #f0f0f0;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          cursor: pointer;
-        "
-      >
-        Video verbergen
-      </button>
-    </div>
-  </div>
-</div>
-
-<script is:inline src="/scripts/video-handler.js"></script>
+<Video 
+  videoId="f5c11c37fa3241909b123961e9157aca"
+  title="Filteren op voornaam"
+  caption="Demonstratie van het filteren op het veld Voornaam in TesoroCRM"
+  loop={true}
+  autoplay={false}
+  muted={true}
+  preload={false}
+  maxWidth="800px"
+/>
 
 ```plaintext
 AFBEELDING: filter_paneel_open.png

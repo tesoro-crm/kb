@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
 import { fileURLToPath } from 'node:url';
 import { readFileSync } from 'fs';
 
@@ -35,6 +36,7 @@ export default defineConfig({
     ]
   },
   integrations: [
+    react(),
     sitemap({
       // Customize sitemap URLs
       customPages: ['https://support.tesoro.estate'],
