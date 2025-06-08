@@ -52,19 +52,7 @@ export default defineConfig({
       customCss: [
         './src/styles/custom.css',
       ],
-      markdown: {
-        // Configureer MDX componenten
-        extendDefaultPlugins: true,
-        shikiConfig: {
-          // Shiki configuratie hier indien nodig
-        }
-      },
-      components: {
-        // Globally available components in MDX files
-        // These will be available without importing them in each MDX file
-        // The key is the component name, the value is the path to the component
-        'Video': './src/components/mdx/Video.astro',
-      },
+
       defaultLocale: 'nl',
       locales: {
         en: {
