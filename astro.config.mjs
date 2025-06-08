@@ -67,12 +67,12 @@ export default defineConfig({
           lang: 'nl',
         },
       },
-      social: {
-        discord: 'https://github.com/withastro/starlight',
-        github: 'https://github.com/tesoro-crm',
-        twitter: 'https://twitter.com/TesoroCRM',
-        linkedin: 'https://linkedin.com/company/tesorocrm',
-      },
+      social: [
+        { icon: 'discord', label: 'Discord', href: 'https://github.com/withastro/starlight' },
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/tesoro-crm' },
+        { icon: 'twitter', label: 'Twitter', href: 'https://twitter.com/TesoroCRM' },
+        { icon: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/company/tesorocrm' },
+      ],
       
       // SEO Configuration
       head: [
