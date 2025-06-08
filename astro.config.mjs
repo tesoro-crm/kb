@@ -52,6 +52,19 @@ export default defineConfig({
       customCss: [
         './src/styles/custom.css',
       ],
+      markdown: {
+        // Configureer MDX componenten
+        extendDefaultPlugins: true,
+        shikiConfig: {
+          // Shiki configuratie hier indien nodig
+        }
+      },
+      components: {
+        // Globally available components in MDX files
+        // These will be available without importing them in each MDX file
+        // The key is the component name, the value is the path to the component
+        'Video': './src/components/mdx/Video.astro',
+      },
       defaultLocale: 'nl',
       locales: {
         en: {
@@ -67,12 +80,12 @@ export default defineConfig({
           lang: 'nl',
         },
       },
-      social: {
-        discord: 'https://github.com/withastro/starlight',
-        github: 'https://github.com/tesoro-crm',
-        twitter: 'https://twitter.com/TesoroCRM',
-        linkedin: 'https://linkedin.com/company/tesorocrm',
-      },
+      social: [
+        { icon: 'discord', label: 'Discord', href: 'https://github.com/withastro/starlight' },
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/tesoro-crm' },
+        { icon: 'twitter', label: 'Twitter', href: 'https://twitter.com/TesoroCRM' },
+        { icon: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/company/tesorocrm' },
+      ],
       
       // SEO Configuration
       head: [
