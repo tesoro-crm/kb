@@ -52,19 +52,6 @@ export default defineConfig({
       customCss: [
         './src/styles/custom.css',
       ],
-      markdown: {
-        // Configureer MDX componenten
-        extendDefaultPlugins: true,
-        shikiConfig: {
-          // Shiki configuratie hier indien nodig
-        }
-      },
-      components: {
-        // Globally available components in MDX files
-        // These will be available without importing them in each MDX file
-        // The key is the component name, the value is the path to the component
-        'Video': './src/components/mdx/Video.astro',
-      },
       defaultLocale: 'nl',
       locales: {
         en: {
@@ -108,52 +95,97 @@ export default defineConfig({
 				replacesTitle: true,
 			},
 			sidebar: [
-				{
-					label: 'Abonneren',
-					autogenerate: { directory: 'subscribe' },
-				},
-				{
-					label: 'Onboarding',
-					autogenerate: { directory: 'onboarding' },
-				},
-				{
-					label: 'Functies',
-					autogenerate: { directory: 'features' },
-					collapsed: false,
-				},
-				{
-					label: 'Instellingen',
-					items: [
-						{
-							label: 'Algemeen',
-							autogenerate: { directory: 'settings/general' },
-						},
-						{
-							label: 'Abonnementen',
-							autogenerate: { directory: 'settings/subscriptions' },
-						},
-						{
-							label: 'Templates',
-							autogenerate: { directory: 'settings/templates' },
-						},
-						{
-							label: 'AI Property Context',
-							link: '/docs/nl/settings/ai-property-context',
-						},
-						{
-							label: 'Website',
-							autogenerate: { directory: 'settings/website' },
-						},
-				{
-					label: 'Interfaces',
-					autogenerate: { directory: 'interfaces' },
-				},
-					],
-				},
-				{
-					label: 'Release Notes',
-					autogenerate: { directory: 'release-notes' },
-				},
+        {
+          label: 'Documentatie',
+          items: [
+            { label: 'Home', link: '/' },
+            {
+              label: 'Functies',
+              items: [
+                { label: 'Overzicht', link: '/features/' },
+                { label: 'Filters', link: '/features/filters' }
+              ]
+            },
+            {
+              label: 'Interfaces',
+              items: [
+                { 
+                  label: 'Deal',
+                  items: [
+                    { label: 'Koper Deal', link: '/interfaces/deal/buyer-deal' },
+                    { label: 'Eigenaar Deal', link: '/interfaces/deal/owner-deal' }
+                  ]
+                }
+              ]
+            },
+            {
+              label: 'Onboarding',
+              items: [
+                { label: 'Overzicht', link: '/onboarding/' },
+                { label: 'Eerste Stappen', link: '/onboarding/first-steps' },
+                { label: 'Account Aanmaken', link: '/onboarding/create-account' },
+                { label: 'Basisinstellingen', link: '/onboarding/basic-settings' },
+                { label: 'Bedrijfsinstellingen Toevoegen', link: '/onboarding/add-company-settings' }
+              ]
+            },
+            {
+              label: 'Abonneren',
+              items: [
+                { label: 'Overzicht', link: '/subscribe/' },
+                { label: 'Voorbereiding', link: '/subscribe/voorbereiding-op-tesoro-crm' },
+                { label: 'Eerste Gebruiker', link: '/subscribe/register-first-user' },
+                { label: 'Collega\'s Toevoegen', link: '/subscribe/add-colleagues' },
+                { label: 'Abonneren', link: '/subscribe/subscribe' }
+              ]
+            },
+            {
+              label: 'Instellingen',
+              items: [
+                { 
+                  label: 'Algemeen',
+                  items: [
+                    { label: 'Overzicht', link: '/settings/general/' },
+                    { label: 'Bedrijfsinstellingen', link: '/settings/general/company-settings' },
+                    { label: 'Persoonlijke Instellingen', link: '/settings/general/personal-settings' },
+                    { label: 'Gebruikers', link: '/settings/general/users' }
+                  ]
+                },
+                {
+                  label: 'Abonnementen',
+                  items: [
+                    { label: 'Overzicht', link: '/settings/subscriptions/' },
+                    { label: 'Abonnementen', link: '/settings/subscriptions/plans' }
+                  ]
+                },
+                {
+                  label: 'Templates',
+                  items: [
+                    { label: 'Overzicht', link: '/settings/templates/' },
+                    { label: 'E-mails', link: '/settings/templates/emails' },
+                    { label: 'PDF\'s', link: '/settings/templates/pdfs' },
+                    { label: 'Prompts', link: '/settings/templates/prompts' }
+                  ]
+                },
+                {
+                  label: 'Website',
+                  items: [
+                    { label: 'Overzicht', link: '/settings/website/' },
+                    { label: 'Configuratie', link: '/settings/website/config' },
+                    { label: 'Importeren', link: '/settings/website/import' },
+                    { label: 'MLS', link: '/settings/website/mls' }
+                  ]
+                }
+              ]
+            },
+            {
+              label: 'Release Notes',
+              items: [
+                { label: 'Overzicht', link: '/release-notes/' },
+                { label: 'v1.1.0', link: '/release-notes/v1-1-0' }
+              ]
+            }
+          ]
+        }
 			],
 		}),
 	],
